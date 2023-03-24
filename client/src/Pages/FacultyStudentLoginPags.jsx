@@ -36,6 +36,7 @@ const FacultyStudentLoginPags = () => {
             setErrors(store.error)
         }
     }, [store.error])
+
     useEffect(() => {
         if (store.student.isAuthenticated) {
             history.push('/home')
@@ -47,11 +48,6 @@ const FacultyStudentLoginPags = () => {
             setErrorsHelper(store.errorHelper)
         }
     }, [store.errorHelper])
-
-
-
-
-
 
     const facultyFormHandler = (e) => {
         e.preventDefault()

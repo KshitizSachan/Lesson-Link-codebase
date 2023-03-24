@@ -49,6 +49,7 @@ import AdminGetAllStudent from './Pages/Admin/AdminGetAllStudents'
 import AdminGetAllSubject from './Pages/Admin/AdminGetAllSubjects'
 
 import AdminHome from './Pages/Admin/AdminHome'
+import Homepage from './Components/Homepage/Homepage';
  
 if (window.localStorage.facultyJwtToken) {
   setAuthToken(localStorage.facultyJwtToken);
@@ -96,7 +97,8 @@ function App() {
     <div>
       <Router>
         <Switch>
-          <Route exact path='/' component={FacultyStudentLoginPags} />
+          <Route exact path = '/' component={Homepage} />
+          {/* <Route exact path='/' component={FacultyStudentLoginPags} /> */}
           <Route exact path='/adminLogin' component={LoginPage} />
           <Route exact path='/home' component={Home} />
           <Route exact path='/student/updateProfile' component={StudentUpdateProfile} />
