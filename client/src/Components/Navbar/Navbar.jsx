@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './Navbar.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { fontSize } from '@mui/system';
+
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
