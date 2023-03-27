@@ -7,7 +7,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 
 const Footer = () => {
     return (
-        <div className="footer-wrapper">
+        <div className="footer-wrapper" id='contactUs'>
             <div className="ft-content">
                 <div className="contactUs">
                     <div className="f-heading">

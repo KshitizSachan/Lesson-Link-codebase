@@ -9,7 +9,7 @@ import LoginS from '../Login/LoginS';
 
 const Homepage = () => {
   return (
-    <div>
+    <div id='home' >
         {/* <Navbar/> */}
         <Banner/>
         <FeatureCard/>

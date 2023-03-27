@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './Navbar.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { fontSize } from '@mui/system';
 
 
 function Navbar() {
@@ -23,10 +21,13 @@ function Navbar() {
       </div>
       <ul className={isOpen ? "menu active" : "menu"}>
         <></>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
+        {/* <Link to={}/> */}
+        <li><a href="#home">Home</a></li>
+        {/* <li><a href="#">About</a></li> */}
+        {/* <Link to='/features'></Link> */}
+        <li><a href="#feature">Features</a></li>
+        <li><a href="#contactUs">Contact</a></li>
+        <li><a href="#login">Login</a></li>
       </ul>
       <div className="toggle" onClick={toggleMenu}>
         <i className="fa fa-bars" aria-hidden="true">{isOpen?<CloseIcon id='menu-icon-style'/>:<MenuIcon id='menu-icon-style'/>}</i>

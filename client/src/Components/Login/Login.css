@@ -19,23 +19,23 @@
 }
 .Login-Rg{
     position: absolute;
-    bottom: 16rem;
+    bottom: 14rem;
     right: 28rem;
     transform: rotate(51deg);
 }
 .Rg-body{
     width: 16rem;
 }
-/* .Login-input-text{
-    width: 100%;
-} */
+.Login-input-text{
+    margin-bottom: 1.5rem;
+}
 .Login-input{
     width: 100%;
     background: #569CCF;
     border: 0px;
-    margin-bottom: 1.5rem;
     padding: 6px 12px;
     border-radius: 8px;
+    color: #fff;
 }
 .Login-input::placeholder{
     color: rgba(255, 255, 255, 0.718);
@@ -145,7 +145,7 @@
         top: -3%;
     }
     .Login-Rg{
-        bottom: 8rem;
+        bottom: 6rem;
         right: 21rem;
     }
     .Rg-body {
@@ -215,8 +215,11 @@
     display: none;
  }
  .Login-Rg {
-    top: 2rem;
+    top: 1rem;
     transform: rotate(-16deg);
+}
+.Login-title{
+    font-size: 1.5rem;
 }
 .login-fac {
     right: 3rem;

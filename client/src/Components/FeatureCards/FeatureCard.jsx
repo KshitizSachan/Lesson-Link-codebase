@@ -5,7 +5,7 @@ import SingalCard from './SingalCard';
 const FeatureCard = () => {
   return (
     <>
-    <div className="FeatureCard-wrapper">
+    <div className="FeatureCard-wrapper" id='feature'>
       <div className="FCard-heading">
         <p>FEATURES</p>
       </div>

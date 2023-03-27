@@ -1,5 +1,6 @@
 .banner-wrapper{
     background-image: linear-gradient(to bottom right, #001339, #0F3277);
+    height: 100vh;
 }
 .banner-main-content{
     padding: 2rem 3rem ;
@@ -46,11 +47,14 @@
     font-size: 24px;
     width: 32%;
     padding: 4px 8px;
+    text-decoration: none;
 }
 .banner-btn{
     margin-top: 28px;
+  
 }
 .b-btn:hover{ 
+    text-decoration: none;
     background-color: #007FFF;
     display: flex;
     justify-content: center;
@@ -72,6 +76,9 @@
     right: 50%;
 }
 @media screen and (max-width:1000px){
+    .banner-wrapper{
+        height: auto;
+    }
     .banner-main-content {
         padding: 2rem 2rem;
     }
