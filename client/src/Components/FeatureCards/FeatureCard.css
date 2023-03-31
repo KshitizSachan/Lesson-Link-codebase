@@ -1,0 +1,103 @@
+.FeatureCard-wrapper{
+    margin: 5rem 6rem;
+    border-radius: 10px;
+}
+.FCard-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+.FCard-heading>p{
+    font-size: 32px;
+    font-weight: 900;
+    font-family: auto;
+    text-decoration: underline;
+}
+.SingalCard-wrapper{
+    /* background-color: #E1EFFF; */
+    width: 100%;
+    box-shadow:  0 7px 30px -10px rgba(150,170,180,0.5);
+    padding: 2rem 3rem;
+    margin: 5rem 0rem;
+    border-radius: 10px;
+}
+.SingalCard-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.SingalCard-left{
+    /* margin-right: 44px; */
+}
+.Ftext-heading p{
+    font-size: 24px;
+    font-family: auto;
+    margin-bottom: 0.6rem;
+    color: #ECF100;;
+    font-weight: 700;
+}
+.FeaturedCard-bodyContent{
+    font-size: 20px;
+}
+.FeaturedCard-bodyContent > p{
+    color: #fff;
+}
+.featureCard-image{
+    /* background: url('https://th.bing.com/th/id/OIP.s6qkxOqsGKB_7JnvbKujWAHaE2?pid=ImgDet&rs=1'); */
+    background-position: center;
+    background-size: cover;
+    /* width: 283px;
+    height: 236px; */
+    width: 416px;
+    height: 264px;
+}
+.SingalCard-right{
+    padding: 1.5rem 0rem;
+    margin: 0rem 3rem;
+    /* background-image: image-set(); */
+}
+
+@media  screen and (max-width: 1000px) {
+    .FeatureCard-wrapper{
+        margin: 3rem 2rem;
+    }
+    .SingalCard-wrapper{
+        margin: 3rem 0rem;
+        padding: 1rem 2rem;
+    }
+    .FeaturedCard-bodyContent > p{
+        text-align: justify;
+    }
+    .featureCard-image {
+        width: 184px;
+        height: 228px;
+    }
+}
+
+
+@media  screen and (max-width: 600px) {
+    .FeaturedCard-bodyContent {
+        font-size: 16px;
+    }
+    .SingalCard-wrapper{
+        margin: 2rem 0rem;
+        padding: 1rem 1rem;
+    }
+    .SingalCard-content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .SingalCard-right {
+        padding: 0.5rem 0rem;
+        margin: 0rem 0.5rem;
+    }
+    .Ftext-heading p {
+        text-align: center;
+    }
+    .featureCard-image {
+        width: 251px;
+        height: 220px;
+    }
+}

@@ -5,21 +5,20 @@ import { facultyLogin } from '../redux/action/facultyAction'
 import { studentLogin } from '../redux/action/studentAction'
 import classnames from 'classnames'
 
-import '../Style/facultyStudentLogin.css'
-
-
-
+import '../Style/facultyStudentLogin.css';
 
 const FacultyStudentLoginPags = () => {
     const store = useSelector((state) => state)
     const dispatch = useDispatch()
     const [facultyRegNum, setFacultyRegNum] = useState('')
     const [facultyPassword, setFacultyPassword] = useState('')
-    const [studentRegNum, setStudentRegNum] = useState('')
-    const [studentPassword, setStudentPassword] = useState('')
+    const [isFacultyLoading, setIsFacultyLoading] = useState(false)
+
     const [errors, setErrors] = useState({})
     const [errorsHelper, setErrorsHelper] = useState({})
-    const [isFacultyLoading, setIsFacultyLoading] = useState(false)
+
+    const [studentRegNum, setStudentRegNum] = useState('')
+    const [studentPassword, setStudentPassword] = useState('')
     const [isStudentLoading, setIsStudentLoading] = useState(false)
 
 
@@ -36,6 +35,7 @@ const FacultyStudentLoginPags = () => {
             setErrors(store.error)
         }
     }, [store.error])
+
     useEffect(() => {
         if (store.student.isAuthenticated) {
             history.push('/home')
@@ -47,11 +47,6 @@ const FacultyStudentLoginPags = () => {
             setErrorsHelper(store.errorHelper)
         }
     }, [store.errorHelper])
-
-
-
-
-
 
     const facultyFormHandler = (e) => {
         e.preventDefault()
@@ -173,7 +168,7 @@ const FacultyStudentLoginPags = () => {
                                     {!isStudentLoading && <button type="submit" className="btn btn-info btn-block ">Login</button>}
 
                                 </form>
-                                <p className="text-center"><Link className="text-center" to="/forgotPassword/student">Forgot Password</Link></p>
+                                <p className="text-center"><Link className="text-end" to="/forgotPassword/student">Forgot Password</Link></p>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,239 @@
+.Login-wrapper{
+    width: 100%;
+}
+.Login-body{
+    background-image: linear-gradient(to right, #2843A1 45%, #007FFF);
+    overflow: hidden;
+    width: 100%;
+    height: 479px;
+    position: relative;
+}
+.Login-left{
+    width: 100rem;
+    height: 47rem;
+    background: #183E61;
+    transform: rotate(-51deg);
+    position: absolute;
+    left: -45rem;
+    top: -3%;
+}
+.Login-Rg{
+    position: absolute;
+    bottom: 14rem;
+    right: 28rem;
+    transform: rotate(51deg);
+}
+.Rg-body{
+    width: 16rem;
+}
+.Login-input-text{
+    margin-bottom: 1.5rem;
+}
+.Login-input{
+    width: 100%;
+    background: #569CCF;
+    border: 0px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: #fff;
+}
+.Login-input::placeholder{
+    color: rgba(255, 255, 255, 0.718);
+}
+.Login-title{
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.lg-btn{
+    background-color: #007FFF;
+    color: #fff;
+    font-family: auto;
+    /* margin-top: 1rem; */
+}
+.Login-pic{
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 4rem;
+}
+.box1, .box2, .box3{
+    background-image: linear-gradient(to right, #ffffff94, #fff0);
+    width: 50%;
+    height: 9rem;
+    transform: rotate(-53deg);
+    position: absolute;
+    right: -4rem;
+    bottom: 30rem;
+}
+.box2{
+    background-image: linear-gradient(to left, #ffffff94, #fff0);
+    transform: rotate(-53deg);
+    right: 7rem;
+    top: 24rem;
+}
+.box3{
+    width: 50%;
+    transform: rotate(-143deg);
+    right: -18rem;
+    bottom: 10rem;
+}
+.login-fac{
+    position: absolute;
+    right: 32rem;
+    top: 13rem;
+    color: #fff;
+    font-family: auto;
+    font-size: 2rem;
+}
+
+/* Logins css */
+.LoginS-body{
+    background-color: #17212B;
+    overflow: hidden;
+    width: 100%;
+    /* height: 34.5vw; */
+    height: 479px;
+    position: relative;
+}
+.LoginS-left{
+    background-image: linear-gradient(to left, #17212B, #2C3843);
+    width: 115%;
+    height: 170%;
+    /* background: #2C3843; */
+    transform: rotate(41deg);
+    position: absolute;
+    left: -36rem;
+    padding-left: 130%;
+    /* padding-left: 112rem; */
+}
+.LoginS-left img{
+    width: 30%;
+    position: absolute;
+    left: 30%;
+    /* left: 33%; */
+    bottom: 37%;
+    /* bottom: 38%; */
+    transform: rotate(-41deg);
+}
+.LoginS-Rg{
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    align-items: center;
+    margin-right: 10%;
+}
+.Login-stud{
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    font-family: auto;
+    right: 52%;
+    top: 42%;
+}
+.SRg-body{
+    width: 18rem;
+}
+
+@media screen and (max-width:1024px){
+    .Login-body {
+        height: 365px;
+    }
+    .Login-left{
+        left: -61rem;
+        top: -3%;
+    }
+    .Login-Rg{
+        bottom: 6rem;
+        right: 21rem;
+    }
+    .Rg-body {
+        width: 14rem;
+    }
+    .Login-pic{
+        right: -2rem;
+    }
+    .Login-pic img{
+        height: 19rem;
+    }
+    .login-fac{
+        right: 15rem;
+        font-size: 1.5rem;
+    }
+    .box1{
+        height: 4rem;
+        right: -7rem;
+        bottom: 23rem;
+    }
+    .box2{
+        height: 4rem;
+        right: 4rem;
+        top: 18rem;
+    }
+    .box3{
+        height: 4rem;
+        right: -6rem;
+        bottom: 10rem;
+    }
+    /* student-login */
+    .LoginS-body {
+        height: 365px;
+    }
+    .LoginS-left{
+        left: -26rem;
+    }
+    .LoginS-left img {
+        width: 33%;
+        left: 37%;
+        bottom: 48%;
+    }
+    .LoginS-Rg{
+        height: 72%;
+        margin-right: 6%;
+    }
+    .LoginS-title{
+        /* font-size: 1.5rem; */
+    }
+    .SRg-body{
+        width: 14rem;
+    }
+    .Login-stud{
+        right: 48%;
+        top: 62%;
+    }
+}
+
+@media screen and (max-width:600px){
+.Login-left{
+    left: -61rem;
+    top: -13%;
+    transform: rotate(16deg);
+    height: 22rem;
+}
+ .Login-pic, .box1, .box2, .box3{
+    display: none;
+ }
+ .Login-Rg {
+    top: 1rem;
+    transform: rotate(-16deg);
+}
+.Login-title{
+    font-size: 1.5rem;
+}
+.login-fac {
+    right: 3rem;
+    top: 0.5rem;
+}
+/* student */
+.LoginS-Rg{
+    height: 100%;
+    margin-right: 22%;
+}
+.LoginS-left{
+    display: none;
+}
+.Login-stud{
+    top: 5%;
+}
+}

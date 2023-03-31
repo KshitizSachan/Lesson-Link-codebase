@@ -49,6 +49,9 @@ import AdminGetAllStudent from './Pages/Admin/AdminGetAllStudents'
 import AdminGetAllSubject from './Pages/Admin/AdminGetAllSubjects'
 
 import AdminHome from './Pages/Admin/AdminHome'
+import Homepage from './Components/Homepage/Homepage';
+
+// import FeatureCard from './Components/FeatureCards/FeatureCard';
  
 if (window.localStorage.facultyJwtToken) {
   setAuthToken(localStorage.facultyJwtToken);
@@ -84,7 +87,7 @@ else if (window.localStorage.adminJwtToken) {
 
   // Check for expired token
   const currentTime = Date.now() / 1000;
-  if (decoded.exp < currentTime) {
+  if (decoded.exp < currentTime){
     store.dispatch(adminLogout());
     window.location.href = '/';
   } 
@@ -96,7 +99,9 @@ function App() {
     <div>
       <Router>
         <Switch>
-          <Route exact path='/' component={FacultyStudentLoginPags} />
+          <Route exact path = '/' component={Homepage} />
+          {/* <Route exact path='/' component={FeatureCard}/> */}
+          {/* <Route exact path='/' component={FacultyStudentLoginPags} /> */}
           <Route exact path='/adminLogin' component={LoginPage} />
           <Route exact path='/home' component={Home} />
           <Route exact path='/student/updateProfile' component={StudentUpdateProfile} />
