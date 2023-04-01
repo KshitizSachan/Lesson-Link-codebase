@@ -13,7 +13,7 @@ const FacultyUpdateProfile = () => {
     const history = useHistory()
     const [gender, setGender] = useState('')
     const [facultyMobileNumber, setContactNumber] = useState('')
-    const [aadharCard, setAadharCard] = useState('')
+    // const [aadharCard, setAadharCard] = useState('')
     const [avatar, setAvatar] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     const imagehandler = (e) => {
@@ -29,7 +29,7 @@ const FacultyUpdateProfile = () => {
         const formData = new FormData()
         formData.append("gender", gender)
         formData.append("facultyMobileNumber", facultyMobileNumber)
-        formData.append("aadharCard", aadharCard)
+        // formData.append("aadharCard", aadharCard)
         formData.append("avatar", avatar)
         formData.append("email", store.faculty.faculty.faculty.email)
         setIsLoading(true)
@@ -69,10 +69,10 @@ const FacultyUpdateProfile = () => {
                                     <label htmlFor="numberId">Contact Number</label>
                                     <input onChange={(e) => setContactNumber(e.target.value)} required type="number" className="form-control" id="numberId" />
                                 </div>
-                                <div className="form-group">
+                                {/* <div className="form-group">
                                     <label htmlFor="aadharId">Aadhar Card Number</label>
                                     <input onChange={(e) => setAadharCard(e.target.value)} type="number" className="form-control" id="aadharId" />
-                                </div>
+                                </div> */}
                                 <div class="row justify-content-center">
                                     <div class="col-md-1">
                                         {

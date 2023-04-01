@@ -40,19 +40,19 @@ module.exports = {
             else if (department === "E.C.E") {
                 departmentHelper = "02"
             }
-            else if (department === "I.T") {
+            else if (department === "D.S.A.I") {
                 departmentHelper = "03"
             }
-            else if (department === "Mechanical") {
-                departmentHelper = "04"
-            }
-            else if (department === "Civil") {
-                departmentHelper = "05"
+            // else if (department === "Mechanical") {
+            //     departmentHelper = "04"
+            // }
+            // else if (department === "Civil") {
+            //     departmentHelper = "05"
 
-            }
-            else if (department === "E.E.E") {
-                departmentHelper = "06"
-            }
+            // }
+            // else if (department === "E.E.E") {
+            //     departmentHelper = "06"
+            // }
             else {
                 departmentHelper = "00"
             }
@@ -168,7 +168,7 @@ module.exports = {
             if (!isValid) {
                 return res.status(400).json(errors)
             }
-            const { name, email, year, fatherName, aadharCard,
+            const { name, email, year, fatherName,
                 gender, department, section, dob, studentMobileNumber,
                 fatherMobileNumber } = req.body
 
@@ -185,7 +185,7 @@ module.exports = {
             else if (department === "E.C.E") {
                 departmentHelper = "02"
             }
-            else if (department === "I.T") {
+            else if (department === "D.S.A.I") {
                 departmentHelper = "03"
             }
             else if (department === "Mechanical") {
@@ -228,7 +228,6 @@ module.exports = {
                 password: hashedPassword,
                 year,
                 fatherName,
-                aadharCard,
                 gender,
                 registrationNumber,
                 department,
@@ -275,7 +274,7 @@ module.exports = {
                 return res.status(400).json(errors)
             }
             const { name, email, designation, department, facultyMobileNumber,
-                aadharCard, dob, gender } = req.body
+                dob, gender } = req.body
             const faculty = await Faculty.findOne({ email })
             if (faculty) {
                 errors.email = 'Email already exist'
@@ -293,7 +292,7 @@ module.exports = {
             else if (department === "E.C.E") {
                 departmentHelper = "02"
             }
-            else if (department === "I.T") {
+            else if (department === "D.S.A.I") {
                 departmentHelper = "03"
             }
             else if (department === "Mechanical") {
@@ -338,7 +337,6 @@ module.exports = {
                 facultyMobileNumber,
                 gender,
                 avatar,
-                aadharCard,
                 registrationNumber,
                 dob,
                 joiningYear

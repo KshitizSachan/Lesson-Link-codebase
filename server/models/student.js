@@ -31,9 +31,9 @@ const studentSchema = new Schema({
     fatherName: {
         type: String
     },
-    aadharCard: {
-        type: Number
-    },
+    // aadharCard: {
+    //     type: Number
+    // },
     gender: {
         type: String
     },
