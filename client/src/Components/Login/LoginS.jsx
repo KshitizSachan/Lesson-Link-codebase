@@ -17,12 +17,12 @@ const LoginS = () => {
     const [errorsHelper, setErrorsHelper] = useState({})
 
     const history = useHistory()
-
+    
     useEffect(() => {
-        if (store.faculty.isAuthenticated) {
-            history.push('/faculty')
+        if (store.student.isAuthenticated) {
+            history.push('/home')
         }
-    }, [store.faculty.isAuthenticated])
+    }, [store.student.isAuthenticated])
 
     useEffect(() => {
         if (store.error) {
