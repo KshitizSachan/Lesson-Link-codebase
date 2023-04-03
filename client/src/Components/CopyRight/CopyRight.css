@@ -1,0 +1,11 @@
+.Copyright{
+    background-color: #1B2E32;
+    color: #ffffffb5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0rem;
+}
+.Copyright p{
+    margin: 0;
+}
