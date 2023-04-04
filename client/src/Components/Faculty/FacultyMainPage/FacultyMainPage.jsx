@@ -6,8 +6,12 @@ import FClassCard from './FClassCard';
 import FacultyDetails from './FacultyDetails';
 import CopyRight from '../../CopyRight/CopyRight';
 import InsertLinkIcon from '@mui/icons-material/InsertLink';
+import { useSelector } from 'react-redux';
+// import { useHistory } from 'react-router-dom'
 
 const FacultyMainPage = () => {
+    // const history = useHistory()
+    const store = useSelector((store) => store)
 
     const classData = [
         {
@@ -22,7 +26,7 @@ const FacultyMainPage = () => {
         {
             id: 2,
             branch: "Computer Science and Engineering",
-            sem: "Semester  III",
+            sem: "III",
             year: "2nd",
             courseCode: "CS002",
             sec: "B",
@@ -31,7 +35,7 @@ const FacultyMainPage = () => {
         {
             id: 3,
             branch: "Computer Science and Engineering",
-            sem: "Semester  III",
+            sem: "III",
             year: "2nd",
             courseCode: "CS002",
             sec: "B",
@@ -40,7 +44,7 @@ const FacultyMainPage = () => {
         {
             id: 4,
             branch: "Computer Science and Engineering",
-            sem: "Semester  III",
+            sem: "III",
             year: "2nd",
             courseCode: "CS002",
             sec: "B",
@@ -49,7 +53,7 @@ const FacultyMainPage = () => {
         {
             id: 5,
             branch: "Computer Science and Engineering",
-            sem: "Semester  III",
+            sem: "III",
             year: "2nd",
             courseCode: "CS002",
             sec: "B",
@@ -58,7 +62,7 @@ const FacultyMainPage = () => {
         {
             id: 6,
             branch: "Computer Science and Engineering",
-            sem: "Semester  III",
+            sem: "III",
             year: "2nd",
             courseCode: "CS002",
             sec: "B",
@@ -67,12 +71,12 @@ const FacultyMainPage = () => {
     ]
     return (
         <>
-            <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} />
+            <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} display ={"none"}/>
             <div className="FMP-wrapper">
                 <div className="fmp-top-background">
                     <div><InsertLinkIcon className="Link-icon" /></div>
                     <div className="faculty-details">
-                        <FacultyDetails/>
+                        <FacultyDetails store={store} display={"none"}/>
                     </div>
                 </div>
                 <div className="Fclasses">
