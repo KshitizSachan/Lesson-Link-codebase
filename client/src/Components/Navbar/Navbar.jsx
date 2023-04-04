@@ -2,13 +2,22 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-
+import { useHistory } from 'react-router-dom';
+import { useDispatch} from 'react-redux';
+import { facultyLogout } from '../../redux/action/facultyAction';
 
 function Navbar(props) {
   const [isOpen, setIsOpen] = useState(false);
+  const history = useHistory()
+  const dispatch = useDispatch()
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  }
+
+  const logoutHandler = () => {
+    dispatch(facultyLogout())
+    history.push('/')
   }
 
   return (
@@ -27,8 +36,8 @@ function Navbar(props) {
         {/* <Link to='/features'></Link> */}
         <li><a href="#feature">Features</a></li>
         <li><a href="#contactUs">Contact</a></li>
-        <li><a href="#login">Login</a></li>
-        {!props.bgcolor?<><li><a href="#login">Login</a></li></>:<><li><a href="#">Logout</a></li></>}
+        {/* <li><a href="#login">Login</a></li> */}
+        {!props.bgcolor?<><li><a href="#login">Login</a></li></>:<><li onClick={logoutHandler}><a href="#">Logout</a></li></>}
       </ul>
       <div className="toggle" onClick={toggleMenu}>
         <i className="fa fa-bars" aria-hidden="true">{isOpen?<CloseIcon id='menu-icon-style'/>:<MenuIcon id='menu-icon-style'/>}</i>

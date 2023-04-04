@@ -50,6 +50,7 @@ import AdminGetAllSubject from './Pages/Admin/AdminGetAllSubjects'
 
 import AdminHome from './Pages/Admin/AdminHome'
 import Homepage from './Pages/Homepage/Homepage';
+import FacultyMainPage from './Components/Faculty/FacultyMainPage/FacultyMainPage';
 
 // import FeatureCard from './Components/FeatureCards/FeatureCard';
  
@@ -105,8 +106,8 @@ function App() {
           <Route exact path='/home' component={Home} />
           <Route exact path='/student/updateProfile' component={StudentUpdateProfile} />
           <Route exact path="/studentDetails" component={StudentDetails} />
-          <Route exact path='/faculty' component={facultyInterface} />
-          {/* <Route exact path='/faculty' component={FacultyMainPage} /> */}
+          {/* <Route exact path='/faculty' component={facultyInterface} /> */}
+          <Route exact path='/faculty' component={FacultyMainPage} />
           <Route exact path='/attendenceFaculty' component={AttendenceFaculty} />
           <Route exact path='/admin' component={AdminHome} />
           <Route exact path="/admin/addStudent" component={AdminAddStudent} />

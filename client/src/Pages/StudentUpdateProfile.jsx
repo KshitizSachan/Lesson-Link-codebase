@@ -15,7 +15,7 @@ const StudentUpdateProfile = () => {
     const [studentMobileNumber, setContactNumber] = useState('')
     const [fatherName, setFatherName] = useState('')
     const [fatherMobileNumber, setFatherContactNumber] = useState('')
-    // const [aadharCard, setAadharCard] = useState('')
+    const [aadharCard, setAadharCard] = useState('')
     const [error, setError] = useState({})
     const [avatar, setAvatar] = useState('')
     const [isLoading, setIsLoading] = useState(false)
@@ -40,7 +40,7 @@ const StudentUpdateProfile = () => {
         formData.append("studentMobileNumber", studentMobileNumber)
         formData.append("fatherName", fatherName)
         formData.append("fatherMobileNumber", fatherMobileNumber)
-        // formData.append("aadharCard", aadharCard)
+        formData.append("aadharCard", aadharCard)
         formData.append("avatar", avatar)
         formData.append("email", store.student.student.student.email)
         dispatch(studentUpdate(formData, history))
@@ -82,10 +82,10 @@ const StudentUpdateProfile = () => {
                                         <label htmlFor="fathercnId">Father Contact Number</label>
                                         <input onChange={(e) => setFatherContactNumber(e.target.value)} type="number" className="form-control" id="fathercnId" />
                                     </div>
-                                    {/* <div className="form-group">
+                                    <div className="form-group">
                                         <label htmlFor="aadharId">Aadhar Card Number</label>
                                         <input onChange={(e) => setAadharCard(e.target.value)} type="number" className="form-control" id="aadharId" />
-                                    </div> */}
+                                    </div>
                                     <button type="submit" className="btn btn-primary">Update</button>
                                 </form>
                             </div>

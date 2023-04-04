@@ -1,0 +1,185 @@
+.FMP-wrapper{
+    font-family: auto;
+}
+.fmp-top-background{
+    width: 100%;
+    height: 35vh;
+    background-color: #E2E2E2;
+    position: relative;
+}
+.fmp-top-background .Link-icon{
+    position: absolute;
+    right: 12%;
+    font-size: 13rem;
+    color: #6c757d4a;
+    transform: rotate(135deg);
+    bottom: 16%;
+}
+.faculty-details{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 5rem;
+}
+.faculty-info-card{
+    background-color: #fff;
+    width: 60%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    justify-content: space-around;
+    box-shadow: 1px 1px 20px #0000005b;
+    border-radius: 10px;
+}
+.fac-info-left{
+    width: 26%;
+}
+.fac-img{
+    height: 13rem;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    background-color: #b1b1b1;
+    /* box-shadow: 1px 1px 20px #0000005b; */
+}
+.fac-img .def{
+    margin-top: 1rem;
+    font-size: 18.7rem;
+    color: white;
+}
+.fac-name-code{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.fac-name-code h4{
+    font-family: auto;  
+}
+.fac-right-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+.fac-info-right{
+    margin-left: 2rem;
+}
+.dep-name h4{
+    font-size: 2rem;
+    color: #384D6B;
+}
+.fac-Pdetails{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.fac-Pdetails .icon{
+    color: #384D6B;
+}
+.fac-Pdetails p{
+    margin-left: 10px;
+    margin-bottom: 0;
+    color: #0000008a;
+}
+.fac-btns{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+.fac-btn{
+    border: 2px solid #007FFF;
+    width: fit-content;
+    padding: 0.4rem 1rem;
+    color: #007FFF;
+    border-radius: 34px;
+}
+.fac-btn:hover{
+    border: 2px solid #007FFF;
+    width: fit-content;
+    padding: 0.4rem 1rem;
+    background-color: #007FFF;
+    color: #fff;
+    border-radius: 34px;
+    box-shadow: 1px 1px 20px #0000005b;
+}
+
+/******************* faculty-work-details **************/
+.fac-work-details{
+    border-radius: 40px;
+    background-color: #092E43;
+    color: white;
+    width: 44%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: -28px;
+}
+.fac-sec{
+    width: 12.5rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #fff;
+    padding: 0rem 2rem;
+}
+.fac-sec .work-icon{
+    margin-right: 0.8rem;
+    font-size: 28px;
+}
+.fac-classes{
+    background-color: #092E43;
+    color: white;
+    margin: 20rem 4rem 1rem 4rem;
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.fac-classes p{
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    margin-left: 2rem;
+}
+
+/************ FClasses-Card **************/
+.Fclasses-cards{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 2rem 5rem;
+}
+.fclass-Card{
+    /* border: 2px solid #FFD460; */
+    border-radius: 16px;
+    height: 9rem;
+    /* width: 17rem; */
+}
+.fC-Card-top{
+    /* background-color: #ffd460; */
+    color: #fff;
+    border-radius: 14px 14px 28px 0px;
+    height: 3rem;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 1rem;
+}
+.fC-Card-body{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    color: grey;
+}

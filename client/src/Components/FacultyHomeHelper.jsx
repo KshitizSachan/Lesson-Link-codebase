@@ -16,6 +16,7 @@ const Home = () => {
             setName(store.faculty.faculty.faculty.name)
         }
     }, [store.faculty.faculty.faculty.name])
+    
     const logoutHandler = () => {
         dispatch(facultyLogout())
         history.push('/')

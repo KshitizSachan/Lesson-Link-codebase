@@ -20,7 +20,7 @@ const AdminAddStudent = () => {
     const [studentMobileNumber, setContactNumber] = useState('')
     const [fatherName, setFatherName] = useState('')
     const [fatherMobileNumber, setFatherContactNumber] = useState('')
-    // const [aadharCard, setAadharCard] = useState('')
+    const [aadharCard, setAadharCard] = useState('')
     const [error, setError] = useState({})
     const [isLoading, setIsLoading] = useState(false)
 
@@ -39,7 +39,7 @@ const AdminAddStudent = () => {
             year,
             department,
             fatherName,
-            // aadharCard,
+            aadharCard,
             gender,
             section: section.toUpperCase(),
             dob: dob.split("-").reverse().join("-"),
@@ -92,10 +92,10 @@ const AdminAddStudent = () => {
                                                 <option>Select</option>
                                                 <option value="E.C.E">E.C.E</option>
                                                 <option value="C.S.E">C.S.E</option>
-                                                <option value="D.S.A.I">D.S.A.I</option>
-                                                {/* <option value="E.E.E">E.E.E</option>
+                                                <option value="I.T">I.T</option>
+                                                <option value="E.E.E">E.E.E</option>
                                                 <option value="Mechanical">Mechanical</option>
-                                                <option value="Civil">Civil</option> */}
+                                                <option value="Civil">Civil</option>
                                             </select>
                                             {error.department && (<div className="invalid-feedback">{error.department}</div>)}
                                         </div>
@@ -154,10 +154,10 @@ const AdminAddStudent = () => {
                                             <label htmlFor="fathercnId">Father Contact Number</label>
                                             <input onChange={(e) => setFatherContactNumber(e.target.value)} type="number" className="form-control" id="fathercnId" />
                                         </div>
-                                        {/* <div className="form-group">
+                                        <div className="form-group">
                                             <label htmlFor="aadharId">Aadhar Card Number</label>
                                             <input onChange={(e) => setAadharCard(e.target.value)} type="number" className="form-control" id="aadharId" />
-                                        </div> */}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
