@@ -93,9 +93,9 @@ const AdminAddStudent = () => {
                                                 <option value="E.C.E">E.C.E</option>
                                                 <option value="C.S.E">C.S.E</option>
                                                 <option value="I.T">I.T</option>
-                                                <option value="E.E.E">E.E.E</option>
-                                                <option value="Mechanical">Mechanical</option>
-                                                <option value="Civil">Civil</option>
+                                                <option value="D.S.A.I">D.S.A.I</option>
+                                                {/* <option value="Mechanical">Mechanical</option>
+                                                <option value="Civil">Civil</option> */}
                                             </select>
                                             {error.department && (<div className="invalid-feedback">{error.department}</div>)}
                                         </div>

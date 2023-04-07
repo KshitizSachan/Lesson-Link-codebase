@@ -43,16 +43,7 @@ module.exports = {
             else if (department === "D.S.A.I") {
                 departmentHelper = "03"
             }
-            // else if (department === "Mechanical") {
-            //     departmentHelper = "04"
-            // }
-            // else if (department === "Civil") {
-            //     departmentHelper = "05"
-
-            // }
-            // else if (department === "E.E.E") {
-            //     departmentHelper = "06"
-            // }
+       
             else {
                 departmentHelper = "00"
             }
