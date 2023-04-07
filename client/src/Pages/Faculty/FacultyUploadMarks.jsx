@@ -130,10 +130,7 @@ const FacultyUploadMarks = () => {
                                     <option>Select</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
-                                    <option value="C">C</option>
-                                    <option value="D">D</option>
-                                    <option value="E">E</option>
-                                    <option value="F">F</option>
+                              
                                 </select>
                                 {error.section && (<div classNameName="invalid-feedback">{error.section}</div>)}
                             </div>
@@ -169,6 +166,10 @@ const FacultyUploadMarks = () => {
                                         'is-invalid': errorHelper.exam
 
                                     })} id="examId">
+
+
+
+                                    {/* TO ADD MORE EXAMS HERE TOKEN: NUM OF EXAMS, NUMBER OF EXAMS */}
                                     <option>Select</option>
                                     <option value="CycleTest1">Cycle Test 1</option>
                                     <option value="CycleTest2">Cylce Test 2</option>

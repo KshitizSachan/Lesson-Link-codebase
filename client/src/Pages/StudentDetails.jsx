@@ -109,10 +109,7 @@ const StudentDetails = () => {
                                                 <option>Select</option>
                                                 <option value="A">A</option>
                                                 <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
+                                               
                                             </select>
                                         </div>
                                         <button type="submit" className="btn btn-info btn-block">Search</button>
