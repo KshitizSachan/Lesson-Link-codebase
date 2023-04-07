@@ -4,7 +4,8 @@ import { useHistory, withRouter } from 'react-router-dom'
 
 
 import { facultyUpdate, facultyLogout} from '../../redux/action/facultyAction'
-import FacultyHomeHelper from '../../Components/FacultyHomeHelper'
+// import FacultyHomeHelper from '../../Components/FacultyHomeHelper'
+import Navbar from '../../Components/Navbar/Navbar';
 
 
 const FacultyUpdateProfile = () => {
@@ -14,8 +15,10 @@ const FacultyUpdateProfile = () => {
     const [gender, setGender] = useState('')
     const [facultyMobileNumber, setContactNumber] = useState('')
     const [aadharCard, setAadharCard] = useState('')
+    const [Email, setEmail] = useState('')
     const [avatar, setAvatar] = useState('')
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
+
     const imagehandler = (e) => {
         if (e.target.files && e.target.files[0]) {
             let img = e.target.files[0]
@@ -23,7 +26,7 @@ const FacultyUpdateProfile = () => {
         }
     }
 
-
+    console.log("store",store);
     const formHandler = async (e) => {
         e.preventDefault()
         const formData = new FormData()
@@ -43,18 +46,19 @@ const FacultyUpdateProfile = () => {
         if (store.faculty.updateProfileFlag) {
             setIsLoading(false)
         }
-    }, [store.faculty.updateProfileFlag])
+    }, [store.faculty.updateProfileFlag]);
+
     return (
         <div>
             {store.faculty.isAuthenticated ? <>
-                <FacultyHomeHelper />
+                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} display ={"none"} />
                 <div className="container mt-5">
                     <div className="row ">
                         <div className="col-md-5 w-100 m-auto">
-                            <form onSubmit={formHandler}>
+                            <form onSubmit={formHandler} className=' d-flex flex-column justify-content-center'>
                                 <div className="form-group">
                                     <label htmlFor="inputId">Profile Picture</label>
-                                    <input required className="form-control" type="file" accept=".jpg,.png,.jpeg" id="inputId" onChange={imagehandler}></input>
+                                    <input required className="form-control" type="file" accept=".jpg,.png,.jpeg" id="inputId" onChange={imagehandler} style={{height:"auto"}} ></input>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="genderId">Gender</label>
@@ -69,20 +73,24 @@ const FacultyUpdateProfile = () => {
                                     <label htmlFor="numberId">Contact Number</label>
                                     <input onChange={(e) => setContactNumber(e.target.value)} required type="number" className="form-control" id="numberId" />
                                 </div>
-                                <div className="form-group">
+                                {/* <div className="form-group">
+                                    <label htmlFor="numberId">Email</label>
+                                    <input onChange={(e) => setEmail(e.target.value)} required type="text" className="form-control" id="Email" />
+                                </div> */}
+                                {/* <div className="form-group">
                                     <label htmlFor="aadharId">Aadhar Card Number</label>
                                     <input onChange={(e) => setAadharCard(e.target.value)} type="number" className="form-control" id="aadharId" />
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-md-1">
+                                </div> */}
+                                <div className="row justify-content-center">
+                                    <div className="col-md-1">
                                         {
-                                            isLoading && <div class="spinner-border text-primary" role="status">
+                                            isLoading && <div className="spinner-border text-primary" role="status">
                                                 <span class="sr-only">Loading...</span>
                                             </div>
                                         }
                                     </div>
                                 </div>
-                                {!isLoading && <button type="submit" className="btn btn-info">Update</button>}
+                                {!isLoading && <button type="submit" className="btn btn-info"  style={{backgroundColor:"#092E43"}}>Update</button>}
                             </form>
                         </div>
                     </div>
@@ -92,4 +100,4 @@ const FacultyUpdateProfile = () => {
     )
 }
 
-export default withRouter(FacultyUpdateProfile)
+export default withRouter(FacultyUpdateProfile);

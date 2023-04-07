@@ -9,28 +9,42 @@ import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
 import ClassIcon from '@mui/icons-material/Class';
 import PeopleIcon from '@mui/icons-material/People';
 import PersonIcon from '@mui/icons-material/Person';
+import { Link } from 'react-router-dom'
 
-const FacultyDetails = () => {
+const FacultyDetails = (props) => {
+    const department={
+        "C.S.E":"Computer Science & Engineering (CSE)",
+        "E.C.E":"Electronics and Communication Engineering (ECE)",
+        "D.S.A.I":"Data Science and AI (DSAI) "
+    }
+
     return (
         <>
             <div className="faculty-info-card">
                 <div className="fac-info-left">
                     <div className="fac-img">
                         {/* <img src="" alt="" /> */}
-                        <PersonIcon className='def' />
+                        {/* <img className='def' src={props.store.faculty.faculty.faculty.avatar} alt="Card image cap" /> */}
+                        {
+                            (props.display) ? <>
+                                <img className="card-img-top" src={props.store.faculty.faculty.faculty.avatar} alt="Card image cap" />
+                            </> : <>
+                                <PersonIcon className='def' />
+                            </>
+                        }
                     </div>
                     <div className="fac-name-code">
-                        <h4>test_faculty</h4>
-                        <p>FAC202301001</p>
+                        <h4>{props.store.faculty.faculty.faculty.name}</h4>
+                        <p>{props.store.faculty.faculty.faculty.registrationNumber}</p>
                     </div>
                 </div>
                 <div className="fac-info-right">
                     <div className="fac-right-top">
                         <div className="dep-name">
-                            <h4 className='m-0' >Computer Science & Engineering (CSE)</h4>
+                            <h4 className='m-0' >{department[props.store.faculty.faculty.faculty.department]}</h4>
                         </div>
                         <div className="fac-designation">
-                            Assistant Professor
+                            {props.store.faculty.faculty.faculty.designation}
                         </div>
                     </div>
                     <div className="fac-right-body">
@@ -38,35 +52,39 @@ const FacultyDetails = () => {
 
                             <div className="fac-Pdetails">
                                 <CalendarTodayIcon className="icon" />
-                                <p>02-01-2022</p>
+                                <p>{props.store.faculty.faculty.faculty.dob}</p>
                             </div>
                             <div className="fac-Pdetails">
                                 <EmailIcon className="icon" />
-                                <p>testfacuclty77@gmail.com</p>
+                                <p>{props.store.faculty.faculty.faculty.email}</p>
                             </div>
                             <div className="fac-Pdetails">
                                 <PhoneIcon className="icon" />
-                                <p>+91 9876543210</p>
+                                <p>{props.store.faculty.faculty.faculty.facultyMobileNumber ?
+                                    props.store.faculty.faculty.faculty.facultyMobileNumber : "NA"}</p>
                             </div>
                         </div>
                         <div className="fdetails-type2">
                             <div className="fac-Pdetails">
                                 <MaleIcon className="icon" />
-                                <p>M</p>
+                                <p>{props.store.faculty.faculty.faculty.gender ? props.store.faculty.faculty.faculty.gender : "NA"
+                                }</p>
                             </div>
                             <div className="fac-Pdetails">
                                 <WorkIcon className="icon" />
-                                <p>2023</p>
+                                <p>{props.store.faculty.faculty.faculty.joiningYear}</p>
                             </div>
                             <div className="fac-Pdetails">
                                 <PermContactCalendarIcon className="icon" />
-                                <p>FAC202301001</p>
+                                <p>{props.store.faculty.faculty.faculty.registrationNumber}</p>
                             </div>
                         </div>
                     </div>
                     <div className="fac-btns">
-                        <div className="fac-btn">Edit Profile </div>
-                        <div className="fac-btn">Update Password</div>
+                        <Link className="fac-btn" to='/faculty/updateProfile'>Edit Profile</Link>
+                        {/* <div className="fac-btn">Edit Profile </div> */}
+                        <Link to="/faculty/updatePassword" className="fac-btn">Update Password</Link>
+                        {/* <div className="fac-btn">Update Password</div> */}
                     </div>
                 </div>
             </div>
