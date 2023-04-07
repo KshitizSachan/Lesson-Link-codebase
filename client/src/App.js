@@ -50,7 +50,7 @@ import AdminGetAllSubject from './Pages/Admin/AdminGetAllSubjects'
 
 import AdminHome from './Pages/Admin/AdminHome'
 import Homepage from './Pages/Homepage/Homepage';
-import FacultyMainPage from './Components/Faculty/FacultyMainPage/FacultyMainPage';
+import FacultyMainPage from './Pages/Faculty/FacultyMainPage/FacultyMainPage';
 
 // import FeatureCard from './Components/FeatureCards/FeatureCard';
  

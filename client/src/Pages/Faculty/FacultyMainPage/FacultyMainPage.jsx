@@ -1,10 +1,11 @@
 import React from 'react'
 import './FacultyMainPage.css'
-import Navbar from '../../Navbar/Navbar'
+import Navbar from '../../../Components/Navbar/Navbar';
 import Arrow from '../../../Style/Images/Arrow.svg'
 import FClassCard from './FClassCard';
 import FacultyDetails from './FacultyDetails';
-import CopyRight from '../../CopyRight/CopyRight';
+// import CopyRight from '../.';
+import CopyRight from '../../../Components/CopyRight/CopyRight';
 import InsertLinkIcon from '@mui/icons-material/InsertLink';
 import { useSelector } from 'react-redux';
 // import { useHistory } from 'react-router-dom'
@@ -98,7 +99,7 @@ const FacultyMainPage = () => {
                     </div>
                 </div>
             </div>
-            <CopyRight/>
+            <CopyRight />
         </>
     )
 }
