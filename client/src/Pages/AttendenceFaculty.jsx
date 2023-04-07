@@ -2,8 +2,9 @@ import React, { useState, useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import classnames from 'classnames'
 import {fetchStudents,markAttendence } from '../redux/action/facultyAction'
-import FacultyHomeHelper from '../Components/FacultyHomeHelper'
+// import FacultyHomeHelper from '../Components/FacultyHomeHelper'
 import { useHistory } from 'react-router-dom'
+import Navbar from '../Components/Navbar/Navbar'
 
 
 const AttendenceFaculty = () => {
@@ -74,7 +75,8 @@ const AttendenceFaculty = () => {
     return (
         <div>
             {store.faculty.isAuthenticated ? <>
-                <FacultyHomeHelper />
+                {/* <FacultyHomeHelper /> */}
+                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} display ={"none"} />
                 {store.faculty.fetchedStudentsHelper && <div className="row justify-content-center mt-4 ">
                     <div className="col-md-4">
                         <form noValidate onSubmit={formHandler}>
