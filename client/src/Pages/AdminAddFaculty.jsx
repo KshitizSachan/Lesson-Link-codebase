@@ -17,7 +17,7 @@ const AdminAddFaculty = () => {
     const [facultyMobileNUmber, setFacultyMobileNumber] = useState('')
     const [dob, setDob] = useState('')
     const [gender, setGender] = useState('')
-    const [aadharCard, setAadharCard] = useState('')
+   
     const [error, setError] = useState({})
     const [isLoading, setIsLoading] = useState(false)
 
@@ -36,7 +36,6 @@ const AdminAddFaculty = () => {
             designation,
             facultyMobileNUmber,
             department,
-            aadharCard,
             gender,
             dob: dob.split("-").reverse().join("-")}))
     }
@@ -103,9 +102,7 @@ const AdminAddFaculty = () => {
                                                 <option value="E.C.E">E.C.E</option>
                                                 <option value="C.S.E">C.S.E</option>
                                                 <option value="D.S.A.I">D.S.A.I</option>
-                                                {/* <option value="I.T">I.T</option>
-                                                <option value="Mechanical">Mechanical</option>
-                                                <option value="Civil">Civil</option> */}
+                                              
                                             </select>
                                             {error.department && (<div className="invalid-feedback">{error.department}</div>)}
                                         </div>
@@ -132,10 +129,7 @@ const AdminAddFaculty = () => {
                                             <label htmlFor="numberId">Contact Number</label>
                                             <input onChange={(e) => setFacultyMobileNumber(e.target.value)} type="number" className="form-control" id="numberId" />
                                         </div>
-                                        <div className="form-group">
-                                            <label htmlFor="aadharId">Aadhar Card Number</label>
-                                            <input onChange={(e) => setAadharCard(e.target.value)} type="number" className="form-control" id="aadharId" />
-                                        </div>
+                                    
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">

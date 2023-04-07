@@ -34,9 +34,6 @@ const facultySchema = new Schema({
     facultyMobileNumber: {
         type: Number
     },
-    // aadharCard: {
-    //     type: Number
-    // },
     dob: {
         type: String,
         required: true

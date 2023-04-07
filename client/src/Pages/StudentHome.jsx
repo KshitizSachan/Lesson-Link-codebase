@@ -76,10 +76,6 @@ const Home = () => {
                                                     store.student.student.student.studentMobileNumber : "NA"}</td>
                                             </tr>
                                             <tr>
-                                                <td>Aadhar Card</td>
-                                                <td>{store.student.student.student.aadharCard ? store.student.student.student.aadharCard : "NA"} </td>
-                                            </tr>
-                                            <tr>
                                                 <td>Father Name</td>
                                                 <td>{store.student.student.student.fatherName ? store.student.student.student.fatherName : "NA" }</td>
                                             </tr>

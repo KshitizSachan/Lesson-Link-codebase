@@ -90,9 +90,6 @@ const StudentDetails = () => {
                                                 <option>Select</option>
                                                 <option value="E.C.E">E.C.E</option>
                                                 <option value="D.S.A.I" >D.S.A.I</option>
-                                                {/* <option value="Mechanical">Mechanical</option>
-                                                <option value="Civil">Civil</option>
-                                                <option value="I.T">I.T</option> */}
                                                 <option value="C.S.E">C.S.E</option>
                                             </select>
                                         </div>

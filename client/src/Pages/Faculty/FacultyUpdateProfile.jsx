@@ -14,7 +14,6 @@ const FacultyUpdateProfile = () => {
     const history = useHistory()
     const [gender, setGender] = useState('')
     const [facultyMobileNumber, setContactNumber] = useState('')
-    const [aadharCard, setAadharCard] = useState('')
     const [Email, setEmail] = useState('')
     const [avatar, setAvatar] = useState('')
     const [isLoading, setIsLoading] = useState(false);
@@ -32,7 +31,6 @@ const FacultyUpdateProfile = () => {
         const formData = new FormData()
         formData.append("gender", gender)
         formData.append("facultyMobileNumber", facultyMobileNumber)
-        formData.append("aadharCard", aadharCard)
         formData.append("avatar", avatar)
         formData.append("email", store.faculty.faculty.faculty.email)
         setIsLoading(true)
@@ -73,14 +71,6 @@ const FacultyUpdateProfile = () => {
                                     <label htmlFor="numberId">Contact Number</label>
                                     <input onChange={(e) => setContactNumber(e.target.value)} required type="number" className="form-control" id="numberId" />
                                 </div>
-                                {/* <div className="form-group">
-                                    <label htmlFor="numberId">Email</label>
-                                    <input onChange={(e) => setEmail(e.target.value)} required type="text" className="form-control" id="Email" />
-                                </div> */}
-                                {/* <div className="form-group">
-                                    <label htmlFor="aadharId">Aadhar Card Number</label>
-                                    <input onChange={(e) => setAadharCard(e.target.value)} type="number" className="form-control" id="aadharId" />
-                                </div> */}
                                 <div className="row justify-content-center">
                                     <div className="col-md-1">
                                         {

@@ -354,10 +354,6 @@ module.exports = {
                 student.fatherMobileNumber = fatherMobileNumber
                 await student.save()
             }
-            // if (aadharCard) {
-            //     student.aadharCard = aadharCard
-            //     await student.save()
-            // }
                 student.avatar = imgResponse.secure_url
                 await student.save()
                 res.status(200).json(student)

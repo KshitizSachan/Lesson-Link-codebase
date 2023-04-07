@@ -304,10 +304,6 @@ module.exports = {
                 faculty.facultyMobileNumber = facultyMobileNumber
                 await faculty.save()
             }
-            // if (aadharCard) {
-            //     faculty.aadharCard = aadharCard
-            //     await faculty.save()
-            // }
             faculty.avatar = imgResponse.secure_url
             await faculty.save()
             res.status(200).json(faculty)
