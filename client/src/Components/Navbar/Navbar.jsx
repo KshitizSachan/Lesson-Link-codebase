@@ -52,7 +52,14 @@ function Navbar(props) {
         <li style={displayStyle}><a href="#home">Home</a></li>
         <li style={displayStyle}><a href="#feature">Features</a></li>
         <li style={displayStyle}><a href="#contactUs">Contact</a></li>
-        {!props.bgcolor ? <><li><a href="#login">Login</a></li></> : <><li onClick={logoutHandler}><a href="#">Logout</a></li></>}
+        {!props.bgcolor ? 
+        <><li><a href="#login">Login</a></li></> 
+        :
+         <>
+           <li ><Link to="/attendenceFaculty"><li>MARK ATTENDANCE</li></Link></li>
+           <li ><Link to="/faculty/uploadMarks"><li>UPLOAD MARKS</li></Link></li>
+           <li onClick={logoutHandler}><a href="#">LOGOUT</a></li>
+        </>}
       </ul>
       <div className="toggle" onClick={toggleMenu}>
         <i className="fa fa-bars" aria-hidden="true">{isOpen ? <CloseIcon id='menu-icon-style' /> : <MenuIcon id='menu-icon-style' />}</i>
