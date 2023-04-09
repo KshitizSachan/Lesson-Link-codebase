@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link, useHistory } from 'react-router-dom'
 import classnames from 'classnames'
-import HomeHelper from '../Components/HomeHelper'
+// import HomeHelper from '../Components/HomeHelper'
+import Navbar from '../Components/Navbar/Navbar';
 import { studentUpdatePassword } from '../redux/action/studentAction'
 
 
@@ -30,7 +31,7 @@ const StudentUpdatePassword = () => {
     return (
         <div>
             {store.student.isAuthenticated ? <>
-                <HomeHelper />
+                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'}  display={"none"} profile="student"/>
                 <div className="container m-5">
                     <div className="row m-5">
                         <div className="col-md-5 m-auto">

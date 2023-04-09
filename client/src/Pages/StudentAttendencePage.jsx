@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {fetchAttendence} from '../redux/action/studentAction'
 
-import axios from 'axios'
-import HomeHelper from '../Components/HomeHelper'
-import { useHistory } from 'react-router-dom'
+// import HomeHelper from '../Components/HomeHelper'
+import { useHistory } from 'react-router-dom';
+import Navbar from '../Components/Navbar/Navbar';
 
 const Home = () => {
     const store = useSelector(store => store)
@@ -19,7 +19,7 @@ const Home = () => {
     return (
         <div>
             {store.student.isAuthenticated ? <>
-                <HomeHelper />
+                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'}  display={"none"} profile="student"/>
                 <div className="container">
                     <div className="row mt-5">
                         <div className="col-md-6 m-auto">

@@ -51,6 +51,7 @@ import AdminGetAllSubject from './Pages/Admin/AdminGetAllSubjects'
 import AdminHome from './Pages/Admin/AdminHome'
 import Homepage from './Pages/Homepage/Homepage';
 import FacultyMainPage from './Pages/Faculty/FacultyMainPage/FacultyMainPage';
+import StudentMainPage from './Pages/Student/StudentMainPage/StudentMainPage';
 
 // import FeatureCard from './Components/FeatureCards/FeatureCard';
  
@@ -103,7 +104,8 @@ function App() {
           {/* <Route exact path='/' component={FacultyStudentLoginPags} /> */}
           <Route exact path = '/' component={Homepage} />
           <Route exact path='/adminLogin' component={LoginPage} />
-          <Route exact path='/home' component={Home} />
+          {/* <Route exact path='/home' component={Home} /> */}
+          <Route exact path='/home' component={StudentMainPage}/>
           <Route exact path='/student/updateProfile' component={StudentUpdateProfile} />
           <Route exact path="/studentDetails" component={StudentDetails} />
           {/* <Route exact path='/faculty' component={facultyInterface} /> */}
@@ -118,9 +120,9 @@ function App() {
           <Route exact path="/admin/allStudents" component={AdminGetAllStudent} />
           <Route exact path="/admin/allSubject" component={AdminGetAllSubject} />
           <Route exact path="/student/attendence" component={StudentAttendencePage} />
-          <Route exact path="/student/updatePassword" component={StudentUpdatePassword} />
-          <Route exact path="/student/testPerformance" component={StudentTestPerformace} />
-          <Route exact path="/faculty/updatePassword" component={FacultyUpdatePassword} />
+          <Route exact path="/student/updatePassword" component={StudentUpdatePassword}/>
+          <Route exact path="/student/testPerformance" component={StudentTestPerformace}/>
+          <Route exact path="/faculty/updatePassword" component={FacultyUpdatePassword}/>
           <Route exact path="/faculty/uploadMarks" component={FacultyUploadMarks} />
           <Route exact path="/faculty/updateProfile" component={FacultyUpdateProfile} />
           <Route exact path="/student/getAllSubjects" component={StudentSubjectList} />

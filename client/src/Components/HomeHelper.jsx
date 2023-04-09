@@ -14,10 +14,12 @@ const Home = () => {
         }
     }, [store.student.student.student.name])
     const dispatch = useDispatch()
+
     useEffect(() => {
         dispatch(newerChats(store.student.student.student.name))
         dispatch(previousChats(store.student.student.student.name))
     }, [store.student.newerChats.length])
+    
     const logoutHandler = () => {
         dispatch(studentLogout())
         history.push('/')

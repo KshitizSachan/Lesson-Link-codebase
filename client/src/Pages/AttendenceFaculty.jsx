@@ -76,7 +76,7 @@ const AttendenceFaculty = () => {
         <div>
             {store.faculty.isAuthenticated ? <>
                 {/* <FacultyHomeHelper /> */}
-                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} display ={"none"} />
+                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'}  profile ="faculty" display={"none"}/>
                 {store.faculty.fetchedStudentsHelper && <div className="row justify-content-center mt-4 ">
                     <div className="col-md-4">
                         <form noValidate onSubmit={formHandler}>

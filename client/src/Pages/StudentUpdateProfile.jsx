@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-
-
 import { studentUpdate, studentLogout,newerChats, previousChats } from '../redux/action/studentAction'
-import HomeHelper from '../Components/HomeHelper'
+// import HomeHelper from '../Components/HomeHelper'
+import Navbar from '../Components/Navbar/Navbar'
 
 import { useHistory, withRouter } from 'react-router-dom'
 
@@ -50,7 +49,7 @@ const StudentUpdateProfile = () => {
         return (
             <div>
                 {store.student.isAuthenticated ? <>
-                    <HomeHelper />
+                    <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'}  display={"none"} profile="student"/>
                     <div className="container mt-5">
                         <div className="row ">
                             <div className="col-md-5 w-100 m-auto">
