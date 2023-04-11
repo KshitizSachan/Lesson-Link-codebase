@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 // import {newerChats, previousChats} from '../redux/action/studentAction'
 import axios from 'axios'
-import HomeHelper from '../Components/HomeHelper'
+// import HomeHelper from '../Components/HomeHelper'
 import {Link, useHistory } from 'react-router-dom'
+import Navbar from '../Components/Navbar/Navbar'
 
 const StudentDetails = () => {
     const store = useSelector((store) => store)
@@ -13,10 +14,6 @@ const StudentDetails = () => {
     const [year, setYear] = useState("")
     const [section, setSection] = useState("")
     const [result, setResult] = useState([])
-
-
-
-    
 
 
     const filterStudentHelper = async () => {
@@ -67,7 +64,7 @@ const StudentDetails = () => {
     return (
         <div>
             {store.student.isAuthenticated ? <>
-                <HomeHelper />
+                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'}  display={"none"} profile="student"/>
                 <div className="container">
                     {result.length === 0 && <div className="row">
                         <div className="col-md-3 border mt-4">

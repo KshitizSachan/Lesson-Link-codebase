@@ -49,7 +49,7 @@ const FacultyUpdateProfile = () => {
     return (
         <div>
             {store.faculty.isAuthenticated ? <>
-                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} display ={"none"} />
+                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} profile ="faculty" display={"none"} />
                 <div className="container mt-5">
                     <div className="row ">
                         <div className="col-md-5 w-100 m-auto">

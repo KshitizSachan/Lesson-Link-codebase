@@ -1,23 +1,22 @@
 import React from 'react'
-import './FacultyMainPage.css'
 import Navbar from '../../../Components/Navbar/Navbar';
 import Arrow from '../../../Style/Images/Arrow.svg'
-import FClassCard from './FClassCard';
-import FacultyDetails from './FacultyDetails';
+import FClassCard from '../../Faculty/FacultyMainPage/FClassCard';
+import FacultyDetails from '../../Faculty/FacultyMainPage/FacultyDetails';
 import CopyRight from '../../../Components/CopyRight/CopyRight';
 import InsertLinkIcon from '@mui/icons-material/InsertLink';
 import { useSelector } from 'react-redux';
 
+const StudentMainPage = () => {
+    const store = useSelector((store) => store.student.student.student)
 
-const FacultyMainPage = () => {
-    // const history = useHistory()
-    const store = useSelector((store) => store.faculty.faculty.faculty)
     console.log(store)
+
     const classData = [
         {
             id: 1,
-            branch: "Computer Science and Engineering",
-            sem: "III",
+            branch: "Software Engineering",
+            sem: "IV",
             year: "2nd",
             courseCode: "CS002",
             sec: "A",
@@ -25,94 +24,97 @@ const FacultyMainPage = () => {
         },
         {
             id: 2,
-            branch: "Computer Science and Engineering",
-            sem: "III",
+            branch: "Theory Of Computation",
+            sem: "IV",
             year: "2nd",
             courseCode: "CS002",
-            sec: "B",
+            sec: "A",
             color: "#1CF5F5"
         },
         {
             id: 3,
-            branch: "Computer Science and Engineering",
-            sem: "III",
+            branch: "Ethics",
+            sem: "IV",
             year: "2nd",
             courseCode: "CS002",
-            sec: "B",
+            sec: "A",
             color: "#8218A8"
         },
         {
             id: 4,
-            branch: "Computer Science and Engineering",
-            sem: "III",
+            branch: "Linear Algebra",
+            sem: "IV",
             year: "2nd",
             courseCode: "CS002",
-            sec: "B",
+            sec: "A",
             color: "#3CB9EF"
         },
         {
             id: 5,
-            branch: "Computer Science and Engineering",
-            sem: "III",
+            branch: "Operating Systems",
+            sem: "IV",
             year: "2nd",
             courseCode: "CS002",
-            sec: "B",
+            sec: "A",
             color: "#0000008a"
         },
         {
             id: 6,
-            branch: "Computer Science and Engineering",
-            sem: "III",
+            branch: "Database Management Systems",
+            sem: "IV",
             year: "2nd",
             courseCode: "CS002",
-            sec: "B",
+            sec: "A",
             color: "#092E43"
         }
     ]
+
     return (
         <>
-            <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} profile="faculty" display={"none"} />
+            <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} profile="student" display={"none"} />
             <div className="FMP-wrapper">
                 <div className="fmp-top-background">
                     <div><InsertLinkIcon className="Link-icon" /></div>
                     <div className="faculty-details">
-                        <FacultyDetails
+                    <FacultyDetails
                             // store={store}
                             img={store.avatar}
                             name={store.name}
                             registrationNumber={store.registrationNumber}
                             department={store.department}
-                            designation={store.designation}
+                            designation={store.section}
                             dob={store.dob}
                             email={store.email}
-                            facultyMobileNumber={store.facultyMobileNumber}
+                            facultyMobileNumber={store.studentMobileNumber}
                             gender={store.gender}
-                            joiningYear={store.joiningYear}
-                            editProfile = '/faculty/updateProfile'
-                            updatePassword ="/faculty/updatePassword"
-                            profile="faculty"
+                            joiningYear={store.batch}
+                            fatherName = {store.fatherName}
+                            fatherMobileNumber = {store.fatherMobileNumber}
+                            editProfile = '/student/updateProfile'
+                            updatePassword ="/student/updatePassword"
+                            profile="student"
                             display={"none"} 
                             />
                     </div>
                 </div>
                 <div className="Fclasses">
                     <div className="fac-classes">
-                        <p><span style={{ marginRight: "1rem" }}><img src={Arrow} /></span> Classes</p>
+                        <p><span style={{ marginRight: "1rem" }}><img src={Arrow} /></span> My Subjects</p>
                     </div>
                     <div className="Fclasses-cards">
                         {
                             classData.map((item) => {
                                 return (
                                     <>
-                                       <div className="C-card" key={item.id} style={{marginRight: "2%",marginBottom:"2rem"}}>
-                                            <FClassCard 
-                                            // item = {item}
-                                            color={item.color}
-                                            branch={item.branch}
-                                            sem= {item.sem}
-                                            courseCode={item.courseCode}
-                                            year={item.year}
-                                            sec={item.sec}
+                                        <div className="C-card" key={item.id} style={{ marginRight: "2%", marginBottom: "2rem" }}>
+                                            <FClassCard
+                                                // item = {item}
+                                                color={item.color}
+                                                branch={item.branch}
+                                                sem={item.sem}
+                                                courseCode={item.courseCode}
+                                                year={item.year}
+                                                sec={item.sec}
                                             />
                                         </div>
                                     </>
@@ -127,4 +129,4 @@ const FacultyMainPage = () => {
     )
 }
 
-export default FacultyMainPage;
+export default StudentMainPage;

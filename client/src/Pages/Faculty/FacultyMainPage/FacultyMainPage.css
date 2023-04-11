@@ -76,6 +76,9 @@
     font-size: 2rem;
     color: #384D6B;
 }
+.fac-designation{
+    color: #00000069;
+}
 .fac-Pdetails{
     display: flex;
     /* justify-content: center; */

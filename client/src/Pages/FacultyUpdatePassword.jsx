@@ -33,7 +33,7 @@ const FacultyUpdatePassword = () => {
         <div>
             {store.faculty.isAuthenticated ? <>
                 {/* <FacultyHomeHelper /> */}
-                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} display ={"none"} />
+                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} profile ="faculty" display ={"none"} />
                 <div className="container m-5">
                     <div className="row m-5">
                         <div className="col-md-6 m-auto">

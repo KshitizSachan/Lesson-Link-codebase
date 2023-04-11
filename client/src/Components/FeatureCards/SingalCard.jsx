@@ -4,6 +4,7 @@ import './FeatureCard.css'
 // import wer from '../../../public/assets/images/Logo.png'
 import Attendence from '../../Style/Images/attendence.svg'
 import Performance from '../../Style/Images/performance.svg'
+import Connect from '../../Style/Images/Connect.svg'
 
 const SingalCard = () => {
 
@@ -26,7 +27,7 @@ const SingalCard = () => {
         },
         {
             id: 3,
-            img: '',
+            img:Connect,
             title: 'Connect and Collaborate',
             description: "Students can connect with their classmates and also students of other classes and get to know each other and collaborate with each other.",
             bgcolor:'#1C5299',
