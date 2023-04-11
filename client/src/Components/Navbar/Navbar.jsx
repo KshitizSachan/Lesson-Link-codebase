@@ -94,7 +94,7 @@ function Navbar(props) {
                   <button type="button" className="btn"><Link to="/studentDetails"><li>NEW CONVERSATION ({store.student.newerChats.length})</li></Link></button>
                 </li>
               </>}
-            <li onClick={logoutHandler}><a href="#">LOGOUT</a></li>
+            <li onClick={logoutHandler}><a href="#"><li>LOGOUT</li></a></li>
           </>
         }
       </ul>
