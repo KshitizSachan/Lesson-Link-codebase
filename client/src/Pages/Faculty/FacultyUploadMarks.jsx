@@ -6,8 +6,6 @@ import { fetchStudents, uploadMarks } from '../../redux/action/facultyAction'
 import { useHistory } from 'react-router-dom'
 import Navbar from '../../Components/Navbar/Navbar'
 import "../../Style/facultyUploadmarks.css"
-
-
 const FacultyUploadMarks = () => {
     const store = useSelector((store) => store)
     const history = useHistory()
@@ -69,12 +67,15 @@ const FacultyUploadMarks = () => {
         <div>
             {store.faculty.isAuthenticated ? <>
                 {/* <FacultyHomeHelper /> */}
-                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} display ={"none"} />
+                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'}  profile ="faculty" display={"none"}/>
                 {store.faculty.fetchedStudentsHelper && <div className="row justify-content-center mt-4 ">
-                    <div className="col-md-4">
+                    <div className="col-md-4 bg_format">
+                        <div className='sbtn_h3_2'>
+                            <h3 className='uploadmarksfac'>Upload Marks</h3>
+                        </div>
                         <form noValidate onSubmit={formHandler}>
                             <div className="form-group">
-                                <label htmlFor="branchId">Department</label>
+                                <label htmlFor="branchId" className='datafontstyle2'>Department</label>
                                 <select onChange={(e) => setDepartment(e.target.value)} className={classnames("form-control",
                                     {
                                         'is-invalid': error.department
@@ -86,7 +87,7 @@ const FacultyUploadMarks = () => {
                                 {error.department && (<div classNameName="invalid-feedback">{error.department}</div>)}
                             </div>
                             <div className="form-group">
-                                <label htmlFor="yearId">Year</label>
+                                <label htmlFor="yearId" className='datafontstyle2'>Year</label>
                                 <select onChange={(e) => setYear(e.target.value)} className={classnames("form-control",
                                     {
                                         'is-invalid': error.year
@@ -121,7 +122,7 @@ const FacultyUploadMarks = () => {
                                 {error.year && (<div classNameName="invalid-feedback">{error.year}</div>)}
                             </div> */}
                             <div className="form-group">
-                                <label htmlFor="sectionId">Section</label>
+                                <label htmlFor="sectionId" className='datafontstyle2'>Section</label>
                                 <select onChange={(e) => setSection(e.target.value)} className={classnames("form-control",
                                     {
                                         'is-invalid': error.section
@@ -130,24 +131,32 @@ const FacultyUploadMarks = () => {
                                     <option>Select</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
-                                    <option value="C">C</option>
-                                    <option value="D">D</option>
-                                    <option value="E">E</option>
-                                    <option value="F">F</option>
+                              
                                 </select>
                                 {error.section && (<div classNameName="invalid-feedback">{error.section}</div>)}
                             </div>
-                            <button type="submit" className="btn btn-primary">Search</button>
+                            <div className="sbtn22">
+                                <button type="submit" className="submitBtn2">Search</button>
+                            </div>
+                            
                         </form>
                     </div>
                 </div>}
 
 
-                {!store.faculty.fetchedStudentsHelper && <div className="row  justify-content-center mt-4">
-                    <div className="col-md-4">
+                {!store.faculty.fetchedStudentsHelper && <div className="col  justify-content-center mt-4 disalign2">
+                    <div className="infoheader2">
+                        <h4>Computer Science & Engineering</h4>
+                        <div className="batchinfo2">
+                            <h6>Semester III</h6>
+                            <h6>Year - 2</h6>
+                            <h6>Section - B</h6>
+                        </div>
+                    </div>
+                    <div className="col-md-4 bg_format">
                         <form onSubmit={secondFormHandler}>
                             <div className="form-group">
-                                <label htmlFor="subjectId">Subject Code</label>
+                                <label htmlFor="subjectId" className='datafontstyle2'>Subject Code</label>
                                 <select onChange={(e) => setSubjectCode(e.target.value)} className={classnames("form-control",
                                     {
                                         'is-invalid': errorHelper.subjectCode
@@ -162,47 +171,49 @@ const FacultyUploadMarks = () => {
                                 </select>
                                 {errorHelper.subjectCode && (<div classNameName="invalid-feedback">{errorHelper.subjectCode}</div>)}
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="examId">Exam</label>
-                                <select onChange={(e) => setExam(e.target.value)} value={exam} className={classnames("form-control",
-                                    {
-                                        'is-invalid': errorHelper.exam
+                            <div className='flexcolumns'>
+                                <div className="form-group">
+                                    <label htmlFor="examId" className='datafontstyle2'>Exam</label>
+                                    <select onChange={(e) => setExam(e.target.value)} value={exam} className={classnames("form-control",
+                                        {
+                                            'is-invalid': errorHelper.exam
 
-                                    })} id="examId">
-                                    <option>Select</option>
-                                    <option value="CycleTest1">Cycle Test 1</option>
-                                    <option value="CycleTest2">Cylce Test 2</option>
-                                    <option value="Semester">Semester</option>
-                                </select>
-                                {errorHelper.exam && (<div classNameName="invalid-feedback">{errorHelper.exam}</div>)}
+                                        })} id="examId">
+
+                                        {/* TO ADD MORE EXAMS HERE TOKEN: NUM OF EXAMS, NUMBER OF EXAMS */}
+                                        <option>Select</option>
+                                        <option value="CycleTest1">Cycle Test 1</option>
+                                        <option value="CycleTest2">Cylce Test 2</option>
+                                        <option value="Semester">Semester</option>
+                                    </select>
+                                    {errorHelper.exam && (<div classNameName="invalid-feedback">{errorHelper.exam}</div>)}
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="marksId" className='datafontstyle2'>Total Marks</label>
+                                    <input type="number" className={classnames("form-control",
+                                        {
+                                            'is-invalid': errorHelper.totalMarks
+
+                                        })} id="marksId"
+                                        value={totalMarks} onChange={(e) => setTotalMarks(e.target.value)} />
+                                    {errorHelper.totalMarks && (<div classNameName="invalid-feedback">{errorHelper.totalMarks}</div>)}
+                                </div>
                             </div>
-
-                            <div className="form-group">
-                                <label htmlFor="marksId">Total Marks</label>
-                                <input type="number" className={classnames("form-control",
-                                    {
-                                        'is-invalid': errorHelper.totalMarks
-
-                                    })} id="marksId"
-                                    value={totalMarks} onChange={(e) => setTotalMarks(e.target.value)} />
-                                {errorHelper.totalMarks && (<div classNameName="invalid-feedback">{errorHelper.totalMarks}</div>)}
-                            </div>
-
-                            <table className="table">
-                                <thead>
+                            <table className="table table_width">
+                                <thead className='frame11'>
                                     <tr>
-                                        <th scope="col">Registration Number</th>
+                                        <th scope="col" className='thleft'>Registration Number</th>
                                         <th scope="col">Student Name</th>
-                                        <th scope="col">Marks</th>
+                                        <th scope="col" className='thright'>Marks</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {
                                         store.faculty.fetchedStudents.map((obj, index) =>
-                                            <tr key={index}>
-                                                <td>{obj.registrationNumber}</td>
-                                                <td>{obj.name}</td>
-                                                <td><div className="form-check">
+                                            <tr key={index} className='frame22'>
+                                                <td style={{verticalAlign: "middle", padding: "0.4rem 1.3rem"}}>{obj.registrationNumber}</td>
+                                                <td style={{verticalAlign: "middle", padding: "0.4rem 1.3rem"}}>{obj.name}</td>
+                                                <td style={{verticalAlign: "middle", padding: "0.4rem 1.3rem"}}><div className="form-check markscolalign">
                                                     <input className="form-control" required type="number" value={obj.marks} onChange={(e) => handleInputChange(e.target.value, obj._id)} id="defaultCheck1" />
                                                 </div></td>
                                             </tr>
@@ -210,7 +221,9 @@ const FacultyUploadMarks = () => {
                                     }
                                 </tbody>
                             </table>
-                            <button type="submit" className="btn btn-primary ml-1">Submit</button>
+                            <div className="sbtn22">
+                                <button type="submit" className="submitBtn2">Submit</button>
+                            </div>
                         </form>
                     </div>
                 </div>
