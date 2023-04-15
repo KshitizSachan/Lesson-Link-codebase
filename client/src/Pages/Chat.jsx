@@ -78,6 +78,8 @@ const Chat = (props) => {
                 receiverRegistrationNumber
             }
             dispatch(sendMessage(room1,messageObj))
+            setTimeout(() => {window.location.reload(); }, 3000); 
+            
         }
         else {
             alert("Can't send empty message")
