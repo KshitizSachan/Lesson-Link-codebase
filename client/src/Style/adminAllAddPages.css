@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@300&family=Roboto:wght@100;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@200;300;400;500&display=swap');
+
+.sarakuch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 69px);
+}
+
+.bgf {
+    padding: 30px;
+    width: 100%;
+    background: rgba(132, 167, 217, 0.24);
+    border-radius: 15px;
+}
+
+.titlestyle {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16px;
+    /* identical to box height, or 73% */
+    letter-spacing: 0.005em;
+    color: #585353;
+}
+
+.addBtn {
+    margin-top: 10px;
+    font-family: 'Roboto Serif';
+    font-weight: 400;
+    padding: 3px 30px;
+    background: #007FFF;
+    border: 1px solid #007FFF;
+    border-radius: 30px;
+    color: #FFFFFF;
+}
+
+.addBtn:hover {
+    background: #FFFFFF;
+    color: #007FFF;
+}

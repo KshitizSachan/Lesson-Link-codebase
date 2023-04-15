@@ -5,7 +5,7 @@ import classnames from 'classnames'
 import { adminAddAdmin } from '../../redux/action/adminAction'
 import AdminHomeHelper from '../../Components/AdminHomeHelper'
 
-
+import "../../Style/adminAllAddPages.css"
 
 const AdminAddAdmin = () => {
     const store = useSelector((state) => state)
@@ -59,62 +59,63 @@ const AdminAddAdmin = () => {
 
         <div>
             {store.admin.isAuthenticated ? (<><AdminHomeHelper />
-                <div className="container mt-5">
-                    <div className="row ">
-                        <div className="col">
-                            <form noValidate onSubmit={formHandler}>
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <div className="form-group">
-                                            <label htmlFor="nameId">Admin Name</label>
-                                            <input onChange={(e) => setName(e.target.value)} type="text" className={classnames("form-control",
-                                                {
-                                                    'is-invalid': error.name
-                                                })} id="nameId" />
-                                            {error.name && (<div className="invalid-feedback">{error.name}</div>)}
-                                        </div>
-                                        <div className="form-group">
-                                            <label htmlFor="emailId">Email</label>
-                                            <input onChange={(e) => setEmail(e.target.value)} type="email" className={classnames("form-control",
-                                                {
-                                                    'is-invalid': error.email
-                                                })} id="emailId" />
-                                            {error.email && (<div className="invalid-feedback">{error.email}</div>)}
-                                        </div>
+                <div className="sarakuch">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col">
+                                <form noValidate onSubmit={formHandler} className='bgf'>
+                                    <div className="row">
+                                        <div className="col-md-6 titlestyle">
+                                            <div className="form-group">
+                                                <label htmlFor="nameId">Admin Name</label>
+                                                <input onChange={(e) => setName(e.target.value)} type="text" className={classnames("form-control",
+                                                    {
+                                                        'is-invalid': error.name
+                                                    })} id="nameId" />
+                                                {error.name && (<div className="invalid-feedback">{error.name}</div>)}
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="emailId">Email</label>
+                                                <input onChange={(e) => setEmail(e.target.value)} type="email" className={classnames("form-control",
+                                                    {
+                                                        'is-invalid': error.email
+                                                    })} id="emailId" />
+                                                {error.email && (<div className="invalid-feedback">{error.email}</div>)}
+                                            </div>
 
-                                        <div className="form-group">
-                                            <label htmlFor="departmentId">Department</label>
-                                            <select onChange={(e) => setDepartment(e.target.value)} className={classnames("form-control",
-                                                {
-                                                    'is-invalid': error.department
-                                                })} id="departmentId">
-                                                <option>Select</option>
-                                                <option value="E.C.E">E.C.E</option>
-                                                <option value="C.S.E">C.S.E</option>
-                                                <option value="D.S.A.I">D.S.A.I</option>
-                                            </select>
-                                            {error.department && (<div className="invalid-feedback">{error.department}</div>)}
+                                            <div className="form-group">
+                                                <label htmlFor="departmentId">Department</label>
+                                                <select onChange={(e) => setDepartment(e.target.value)} className={classnames("form-control",
+                                                    {
+                                                        'is-invalid': error.department
+                                                    })} id="departmentId">
+                                                    <option>Select</option>
+                                                    <option value="E.C.E">E.C.E</option>
+                                                    <option value="C.S.E">C.S.E</option>
+                                                    <option value="D.S.A.I">D.S.A.I</option>
+                                                </select>
+                                                {error.department && (<div className="invalid-feedback">{error.department}</div>)}
+                                            </div>
+                                        </div>
+                                        <div className="col-md-6 titlestyle">
+                                            <div className="form-group">
+                                                <label htmlFor="dobId">DOB</label>
+                                                <input onChange={(e) => setDob(e.target.value)} type="date" className={classnames("form-control",
+                                                    {
+                                                        'is-invalid': error.dob
+                                                    })} id="dobId" />
+                                                {error.dob && (<div className="invalid-feedback">{error.dob}</div>)}
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="numberId">Contact Number</label>
+                                                <input onChange={(e) => setContactNumber(e.target.value)} type="number" className={classnames("form-control",
+                                                    {
+                                                        'is-invalid': error.contactNumber
+                                                    })} id="numberId" />
+                                                {error.contactNumber && (<div className="invalid-feedback">{error.contactNumber}</div>)}
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
-                                        <div className="form-group">
-                                            <label htmlFor="dobId">DOB</label>
-                                            <input onChange={(e) => setDob(e.target.value)} type="date" className={classnames("form-control",
-                                                {
-                                                    'is-invalid': error.dob
-                                                })} id="dobId" />
-                                            {error.dob && (<div className="invalid-feedback">{error.dob}</div>)}
-                                        </div>
-                                        <div className="form-group">
-                                            <label htmlFor="numberId">Contact Number</label>
-                                            <input onChange={(e) => setContactNumber(e.target.value)} type="number" className={classnames("form-control",
-                                                {
-                                                    'is-invalid': error.contactNumber
-                                                })} id="numberId" />
-                                            {error.contactNumber && (<div className="invalid-feedback">{error.contactNumber}</div>)}
-                                        </div>
-                                    </div>
-                                </div>
                                     <div class="row justify-content-center">
                                         <div class="col-md-1">
                                             {
@@ -124,8 +125,9 @@ const AdminAddAdmin = () => {
                                             }
                                         </div>
                                     </div>
-                                    {!isLoading && <button type="submit" className="btn btn-info  ">Add Admin</button>}
-                            </form>
+                                    {!isLoading && <button type="submit" className="btn btn-info addBtn">Add Admin</button>}
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div></>) : (history.push('/'))}
