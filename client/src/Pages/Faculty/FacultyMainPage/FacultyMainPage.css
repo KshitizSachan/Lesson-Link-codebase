@@ -116,7 +116,18 @@
     box-shadow: 1px 1px 20px #0000005b;
     text-decoration: none;
 }
-
+.chat-btn{
+    width: 100%;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 40px;
+    padding: 5px 0px;
+}
+.chat-btn:focus{
+    outline: none;
+}
 /******************* faculty-work-details **************/
 .fac-work-details{
     border-radius: 40px;

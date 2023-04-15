@@ -3,7 +3,7 @@ import './FacultyMainPage.css';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
-import MaleIcon from '@mui/icons-material/Male';
+import ManIcon from '@mui/icons-material/Man';
 import WorkIcon from '@mui/icons-material/Work';
 import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
 import ClassIcon from '@mui/icons-material/Class';
@@ -14,6 +14,7 @@ import EscalatorWarningIcon from '@mui/icons-material/EscalatorWarning';
 import AttendenceIcon from '../../../Style/Icons/Attendence_Icon.svg';
 import ConversationIcon from '../../../Style/Icons/conversation_icon.svg';
 import SubjectIcon from '../../../Style/Icons/subjects_icon.svg';
+import WomanIcon from '@mui/icons-material/Woman';
 
 const FacultyDetails = (props) => {
     const department = {
@@ -40,6 +41,7 @@ const FacultyDetails = (props) => {
                     <div className="fac-name-code">
                         <h4>{props.name}</h4>
                         <p>{props.registrationNumber}</p>
+                        {/* {props.type === "Reciever"?<></>:<></>} */}
                     </div>
                 </div>
                 <div className="fac-info-right">
@@ -53,10 +55,9 @@ const FacultyDetails = (props) => {
                     </div>
                     <div className="fac-right-body">
                         <div className="fdetails-type1">
-
                             <div className="fac-Pdetails">
                                 <CalendarTodayIcon className="icon" />
-                                <p>{props.dob}</p>
+                                {props.type === "Receiver" ? <><p>{props.year} year</p></> : <><p>{props.dob}</p></>}
                             </div>
                             <div className="fac-Pdetails">
                                 <EmailIcon className="icon" />
@@ -67,18 +68,23 @@ const FacultyDetails = (props) => {
                                 <p>{props.facultyMobileNumber ?
                                     props.facultyMobileNumber : "NA"}</p>
                             </div>
-                            {props.profile === "student" ? <>
-                                <div className="fac-Pdetails">
-                                    <EscalatorWarningIcon className="icon" />
-                                    <p>{props.fatherName ?
-                                        props.fatherName: "NA"}</p>
-                                </div>
-
-                            </> : <></>}
+                            {props.type === "Receiver" ? <></> : <>
+                                {props.profile === "student" ? <>
+                                    <div className="fac-Pdetails">
+                                        <EscalatorWarningIcon className="icon" />
+                                        <p>{props.fatherName ?
+                                            props.fatherName : "NA"}</p>
+                                    </div>
+                                </> : <></>}
+                            </>}
                         </div>
                         <div className="fdetails-type2">
                             <div className="fac-Pdetails">
-                                <MaleIcon className="icon" />
+                                {props.gender === "Male"?<>
+                                     <ManIcon className="icon" />
+                                </>:<>
+                                < WomanIcon className="icon"/>
+                                </>}
                                 <p>{props.gender ? props.gender : "NA"
                                 }</p>
                             </div>
@@ -90,67 +96,80 @@ const FacultyDetails = (props) => {
                                 <PermContactCalendarIcon className="icon" />
                                 <p>{props.registrationNumber}</p>
                             </div>
-                            {props.profile === "student"?
-                            <>
-                            <div className="fac-Pdetails">
-                                <PhoneIcon className="icon" />
-                                <p>{props.fatherMobileNumber}</p>
-                            </div>
-                            </>
-                            :<></>}
+                            {props.type === "Receiver" ? <></> : <>
+                                {props.profile === "student" ?
+                                    <>
+                                        <div className="fac-Pdetails">
+                                            <PhoneIcon className="icon" />
+                                            <p>{props.fatherMobileNumber}</p>
+                                        </div>
+                                    </>
+                                    : <></>}
+                            </>}
                         </div>
                     </div>
-                    <div className="fac-btns">
-                        <Link className="fac-btn" to={props.editProfile}>Edit Profile</Link>
-                        {/* <div className="fac-btn">Edit Profile </div> */}
-                        <Link to={props.updatePassword} className="fac-btn">Update Password</Link>
-                        {/* <div className="fac-btn">Update Password</div> */}
+                    {props.type !== "Receiver" ?
+                        <>
+                            <div className="fac-btns">
+                                <Link className="fac-btn" to={props.editProfile}>Edit Profile</Link>
+                                {/* <div className="fac-btn">Edit Profile </div> */}
+                                <Link to={props.updatePassword} className="fac-btn">Update Password</Link>
+                                {/* <div className="fac-btn">Update Password</div> */}
+                            </div>
+                        </> :
+                        <>
+                            <Link to={`/chat/${props.registrationNumber}.${props.registrationNumber}`} style={{ textDecoration: "none", color: "#fff" }}>
+                                <button className='chat-btn'>CHAT
+                                </button>
+                            </Link>
+                        </>}
+                </div>
+            </div>
+            {props.type !== "Receiver" ? <>
+                <div className="fac-work-details">
+                    <div className="fac-sec">
+                        {props.profile === "faculty" ?
+                            <>
+                                <PeopleIcon className='work-icon' />
+                                <span>480 Students</span>
+                            </>
+                            :
+                            <>
+                                <img src={AttendenceIcon} alt="" className='work-icon' />
+                                <span>Attendence</span>
+                            </>
+                        }
+                    </div>
+                    <div className="fac-sec">
+                        {props.profile === "faculty" ?
+                            <>
+                                <ClassIcon className='work-icon' />
+                                <span>6 Classes</span>
+                            </>
+                            :
+                            <>
+                                <img src={ConversationIcon} alt="" className='work-icon' />
+                                <span>Conversation</span>
+                            </>
+                        }
+
+                    </div>
+                    <div className="fac-sec" style={{ border: 0 }}>
+                        {props.profile === "faculty" ?
+                            <>
+                                <PeopleIcon className='work-icon' />
+                                <span>8 Lectures</span>
+                            </>
+                            :
+                            <>
+                                <img src={SubjectIcon} alt="" className='work-icon' />
+                                <span>My Subjects</span>
+                            </>
+                        }
+
                     </div>
                 </div>
-            </div>
-            <div className="fac-work-details">
-                <div className="fac-sec">
-                    {props.profile === "faculty"?
-                    <>
-                    <PeopleIcon className='work-icon'/>
-                    <span>480 Students</span>
-                    </>
-                    :
-                    <>
-                    <img src={AttendenceIcon} alt="" className='work-icon' />
-                    <span>Attendence</span>
-                    </>
-                    }
-                </div>
-                <div className="fac-sec">
-                {props.profile === "faculty"?
-                    <>
-                   <ClassIcon className='work-icon'/>
-                    <span>6 Classes</span>
-                    </>
-                    :
-                    <>
-                    <img src={ConversationIcon} alt="" className='work-icon' />
-                    <span>Conversation</span>
-                    </>
-                    }
-                    
-                </div>
-                <div className="fac-sec" style={{ border: 0 }}>
-                {props.profile === "faculty"?
-                    <>
-                   <PeopleIcon className='work-icon' />
-                    <span>8 Lectures</span>
-                    </>
-                    :
-                    <>
-                    <img src={SubjectIcon} alt="" className='work-icon' />
-                    <span>My Subjects</span>
-                    </>
-                    }
-                    
-                </div>
-            </div>
+            </> : <></>}
         </>
     )
 }

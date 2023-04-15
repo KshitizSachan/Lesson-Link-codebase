@@ -60,7 +60,7 @@ const AdminAddStudent = () => {
     return (
         <div>
             {store.admin.isAuthenticated ? <><AdminHomeHelper />
-                <div className="sarakuch" style={{height: "calc(130vh - 69px)"}}>
+                <div className="sarakuch" >
                     <div className="container">
                         <div className="row ">
                             <div className="col">

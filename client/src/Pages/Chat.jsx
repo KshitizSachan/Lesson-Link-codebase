@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import HomeHelper from '../Components/HomeHelper'
+// import HomeHelper from '../Components/HomeHelper'
 import { useSelector, useDispatch } from 'react-redux'
 import { sendMessage, getPrivateConversation, getPrivateConversation2} from '../redux/action/studentAction'
 import io from 'socket.io-client';
 import { useHistory } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import Navbar from '../Components/Navbar/Navbar';
+import '../Style/Chat.css'
 
 //Swap HelperFunction
 function swap(input, value_1, value_2) {
@@ -18,7 +19,6 @@ let socket;
 
 
 const Chat = (props) => {
-    
     const store = useSelector((store) => store)
     const history = useHistory()
     const dispatch = useDispatch()
@@ -79,12 +79,9 @@ const Chat = (props) => {
                 receiverRegistrationNumber
             }
             dispatch(sendMessage(room1,messageObj))
-            setTimeout(() => {window.location.reload(); }, 3000); 
-            
         }
         else {
-            // alert("Can't send empty message")
-            toast.error("Can't send empty message");
+            alert("Can't send empty message")
         }
     }
 
@@ -97,27 +94,51 @@ const Chat = (props) => {
         
     },[messageArray,olderMessages])
    
+   
+function formatDate(timestamp) {
+    const date = new Date(timestamp);
+    const formattedDate = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
+    return formattedDate;
+
+  }
+  
+  function formatTime(timestamp) {
+    const date = new Date(timestamp);
+    const hours = date.getHours();
+    const minutes = "0" + date.getMinutes();
+    const seconds = "0" + date.getSeconds();
+    const formattedTime = hours >= 12 ? `${hours-12}:${minutes.substr(-2)}:${seconds.substr(-2)} PM` : `${hours}:${minutes.substr(-2)}:${seconds.substr(-2)} AM`;
+    return formattedTime;
+  }
 
     return (
-        <div>
+        <div className='chatWrapper'>
             {store.student.isAuthenticated ? <>
-                <HomeHelper />
+                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} profile="student" display={"none"} />
                 <div className="container">
                     <div className="row">
                         <div className="col-md-5">
-                            <form className="form-inline" onSubmit={formHandler}>
+                            <form className="d-flex flex-row" onSubmit={formHandler} style={{marginTop:"2rem"}}>
                                 <div className="form-group ">
-                                    {/* <input value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type here.." type="text" className="form-control" /> */}
-                                    <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type here.." type="text" className="form-control" />
+                                    {/* <input value={message} maxLength="10" onChange={(e) => setMessage(e.target.value)} placeholder="Type here.." type="text" className="form-control" /> */}
+                                    <textarea value={message} rows="1" cols="50" onChange={(e) => setMessage(e.target.value)} placeholder="Type here.." type="text" className="form-control" />
                                 </div>
-                                <button type="submit" className="btn btn-primary ml-1 ">Send</button>
+                                <button type="submit" className="btn btn-primary ml-1" style={{height: "fit-content"}}>Send</button>
                             </form>
                         </div>
                         <div className="col-md-7">
                             {
                                 store.student.privateChat.map((obj,index) =>
                                     <div key={index}>
-                                        <p>{obj.senderName}: {obj.message}, {obj.createdAt}</p>
+                                        <p className='chat-date'>{formatDate(obj.createdAt)}</p>
+                                        <div className="chat-content">
+                                        <p className='personName'>{obj.senderName}</p>
+                                        <div className="chat-detail">
+                                        <p className='personChat'>{obj.message}<br /></p> 
+                                        <span className='chat-time' >{formatTime(obj.createdAt)}</span>
+                                        </div>
+                                        </div>
+                                        {/* //{obj.createdAt} */}
                                     </div>
                                 )
                             }
