@@ -9,29 +9,29 @@ import "../../Style/facultyUploadmarks.css"
 const FacultyUploadMarks = () => {
     const store = useSelector((store) => store)
     const history = useHistory()
-    const dispatch = useDispatch() 
+    const dispatch = useDispatch()
     const [department, setDepartment] = useState("")
     const [year, setYear] = useState("")
     const [marks, setMarks] = useState([])
     const [section, setSection] = useState("")
     const [subjectCode, setSubjectCode] = useState("")
     const [totalMarks, setTotalMarks] = useState()
-    const [exam ,setExam] = useState("")
+    const [exam, setExam] = useState("")
     const [error, setError] = useState({})
     const [errorHelper, setErrorHelper] = useState({})
 
-   
+
 
 
     const handleInputChange = (value, _id) => {
-    
+
         const newMarks = [...marks]
         let index = newMarks.findIndex(m => m._id === _id)
         if (index === -1) {
             newMarks.push({ _id, value })
         }
         else {
-           newMarks[index].value = value
+            newMarks[index].value = value
         }
         setMarks(newMarks)
     }
@@ -50,8 +50,8 @@ const FacultyUploadMarks = () => {
 
     const formHandler = (e) => {
         e.preventDefault()
-    
-       dispatch(fetchStudents(department, year,  section))
+
+        dispatch(fetchStudents(department, year, section))
 
     }
 
@@ -67,42 +67,43 @@ const FacultyUploadMarks = () => {
         <div>
             {store.faculty.isAuthenticated ? <>
                 {/* <FacultyHomeHelper /> */}
-                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'}  profile ="faculty" display={"none"}/>
-                {store.faculty.fetchedStudentsHelper && <div className="row justify-content-center mt-4 ">
-                    <div className="col-md-4 bg_format">
-                        <div className='sbtn_h3_2'>
-                            <h3 className='uploadmarksfac'>Upload Marks</h3>
-                        </div>
-                        <form noValidate onSubmit={formHandler}>
-                            <div className="form-group">
-                                <label htmlFor="branchId" className='datafontstyle2'>Department</label>
-                                <select onChange={(e) => setDepartment(e.target.value)} className={classnames("form-control",
-                                    {
-                                        'is-invalid': error.department
-
-                                    })} id="bramchId">
-                                    <option>Select</option>
-                                    <option value={store.faculty.faculty.faculty.department}>{store.faculty.faculty.faculty.department}</option>
-                                </select>
-                                {error.department && (<div classNameName="invalid-feedback">{error.department}</div>)}
+                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} profile="faculty" display={"none"} />
+                {store.faculty.fetchedStudentsHelper && <div className="sabkuch2">
+                    <div className="row justify-content-center">
+                        <div className="col-md-4 bg_format">
+                            <div className='sbtn_h3_2'>
+                                <h3 className='uploadmarksfac'>Upload Marks</h3>
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="yearId" className='datafontstyle2'>Year</label>
-                                <select onChange={(e) => setYear(e.target.value)} className={classnames("form-control",
-                                    {
-                                        'is-invalid': error.year
+                            <form noValidate onSubmit={formHandler}>
+                                <div className="form-group">
+                                    <label htmlFor="branchId" className='datafontstyle2'>Department</label>
+                                    <select onChange={(e) => setDepartment(e.target.value)} className={classnames("form-control",
+                                        {
+                                            'is-invalid': error.department
 
-                                    })} id="yearId">
-                                    <option>Select</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
+                                        })} id="bramchId">
+                                        <option>Select</option>
+                                        <option value={store.faculty.faculty.faculty.department}>{store.faculty.faculty.faculty.department}</option>
+                                    </select>
+                                    {error.department && (<div classNameName="invalid-feedback">{error.department}</div>)}
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="yearId" className='datafontstyle2'>Year</label>
+                                    <select onChange={(e) => setYear(e.target.value)} className={classnames("form-control",
+                                        {
+                                            'is-invalid': error.year
 
-                                {error.year && (<div classNameName="invalid-feedback">{error.year}</div>)}
-                            </div>
-                            {/* <div className="form-group">
+                                        })} id="yearId">
+                                        <option>Select</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+
+                                    {error.year && (<div classNameName="invalid-feedback">{error.year}</div>)}
+                                </div>
+                                {/* <div className="form-group">
                                 <label htmlFor="semesterId">Semester</label>
                                 <select onChange={(e) => setSemester(e.target.value)} className={classnames("form-control",
                                     {
@@ -121,28 +122,28 @@ const FacultyUploadMarks = () => {
                                 </select>
                                 {error.year && (<div classNameName="invalid-feedback">{error.year}</div>)}
                             </div> */}
-                            <div className="form-group">
-                                <label htmlFor="sectionId" className='datafontstyle2'>Section</label>
-                                <select onChange={(e) => setSection(e.target.value)} className={classnames("form-control",
-                                    {
-                                        'is-invalid': error.section
+                                <div className="form-group">
+                                    <label htmlFor="sectionId" className='datafontstyle2'>Section</label>
+                                    <select onChange={(e) => setSection(e.target.value)} className={classnames("form-control",
+                                        {
+                                            'is-invalid': error.section
 
-                                    })} id="sectionId">
-                                    <option>Select</option>
-                                    <option value="A">A</option>
-                                    <option value="B">B</option>
-                              
-                                </select>
-                                {error.section && (<div classNameName="invalid-feedback">{error.section}</div>)}
-                            </div>
-                            <div className="sbtn22">
-                                <button type="submit" className="submitBtn2">Search</button>
-                            </div>
-                            
-                        </form>
+                                        })} id="sectionId">
+                                        <option>Select</option>
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+
+                                    </select>
+                                    {error.section && (<div classNameName="invalid-feedback">{error.section}</div>)}
+                                </div>
+                                <div className="sbtn22">
+                                    <button type="submit" className="submitBtn2">Search</button>
+                                </div>
+
+                            </form>
+                        </div>
                     </div>
                 </div>}
-
 
                 {!store.faculty.fetchedStudentsHelper && <div className="col  justify-content-center mt-4 disalign2">
                     <div className="infoheader2">
@@ -211,9 +212,9 @@ const FacultyUploadMarks = () => {
                                     {
                                         store.faculty.fetchedStudents.map((obj, index) =>
                                             <tr key={index} className='frame22'>
-                                                <td style={{verticalAlign: "middle", padding: "0.4rem 1.3rem"}}>{obj.registrationNumber}</td>
-                                                <td style={{verticalAlign: "middle", padding: "0.4rem 1.3rem"}}>{obj.name}</td>
-                                                <td style={{verticalAlign: "middle", padding: "0.4rem 1.3rem"}}><div className="form-check markscolalign">
+                                                <td style={{ verticalAlign: "middle", padding: "0.4rem 1.3rem" }}>{obj.registrationNumber}</td>
+                                                <td style={{ verticalAlign: "middle", padding: "0.4rem 1.3rem" }}>{obj.name}</td>
+                                                <td style={{ verticalAlign: "middle", padding: "0.4rem 1.3rem" }}><div className="form-check markscolalign">
                                                     <input className="form-control" required type="number" value={obj.marks} onChange={(e) => handleInputChange(e.target.value, obj._id)} id="defaultCheck1" />
                                                 </div></td>
                                             </tr>
@@ -229,7 +230,7 @@ const FacultyUploadMarks = () => {
                 </div>
                 }
             </> : (history.push('/'))}
-            
+
         </div>
     )
 }

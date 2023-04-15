@@ -1,0 +1,32 @@
+.sabkuch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 73px);
+    /* background: linear-gradient(to right, #FFE4C4, #FFFACD); */
+}
+
+.bgFormat {
+    padding: 20px 30px;
+    max-width: max-content;
+    background: rgba(132, 167, 217, 0.24);
+    /* background: linear-gradient(to right, #ADD8E6, #E0FFFF); */
+    border-radius: 15px;
+    margin-bottom: 70px;
+    margin-top: 100px;
+}
+
+.bgFormat td, .bgFormat th {
+    padding: 0.75rem 1.5rem;
+}
+
+.headframe{
+    border-top-right-radius: 20px;
+    background: #FFFFFF;
+}
+
+.bodyframe{
+    background: #F5F5F5;
+    border-bottom: 2px solid #FFFFFF;
+    /* border-radius: 8px 8px 0px 0px; */
+}
