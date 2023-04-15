@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory, withRouter } from 'react-router-dom'
+import { toast } from 'react-toastify';
 
 
 import { facultyUpdate, facultyLogout} from '../../redux/action/facultyAction'
@@ -35,7 +36,8 @@ const FacultyUpdateProfile = () => {
         formData.append("email", store.faculty.faculty.faculty.email)
         setIsLoading(true)
         dispatch(facultyUpdate(formData, history))
-        alert("Kindly login again to see updates")
+        // alert("Kindly login again to see updates")
+        toast.success("Kindly login again to see updates")
         dispatch(facultyLogout())
         history.push('/')
     }

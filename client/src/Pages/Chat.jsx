@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { sendMessage, getPrivateConversation, getPrivateConversation2} from '../redux/action/studentAction'
 import io from 'socket.io-client';
 import { useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 //Swap HelperFunction
 function swap(input, value_1, value_2) {
@@ -82,7 +83,8 @@ const Chat = (props) => {
             
         }
         else {
-            alert("Can't send empty message")
+            // alert("Can't send empty message")
+            toast.error("Can't send empty message");
         }
     }
 

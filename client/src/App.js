@@ -99,6 +99,7 @@ function App() {
   const store = useSelector((store)=>store)
   return (
     <div>
+    
       <Router>
         <Switch>
           {/* <Route exact path='/' component={FacultyStudentLoginPags} /> */}
