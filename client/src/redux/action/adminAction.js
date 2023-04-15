@@ -5,6 +5,10 @@ import {
     SET_ADMIN, SET_ERRORS, 
     GET_SUBJECTS
 } from '../actionTypes'
+import { toast } from 'react-toastify';
+
+
+
 
 const url = "http://localhost:5000"
 
@@ -125,7 +129,8 @@ export const adminAddFaculty = (facultyCredential) => {
                 data: facultyCredential
             })
             dispatch(adminAddFacultyFlag(true))
-            alert("Faculty Added Successfully")
+            // alert("Faculty Added Successfully")
+            toast.success("Faculty Added Successfully")
         }
         catch (err) {
             dispatch({
@@ -145,7 +150,8 @@ export const adminAddStudent = (studentCredential) => {
                 data: studentCredential
             })
             dispatch(adminAddStudentFlag(true))
-            alert("Student Added Successfully")
+            // alert("Student Added Successfully")
+            toast.success("Student Added Successfully")
         }
         catch (err) {
             dispatch({
@@ -165,7 +171,8 @@ export const adminAddSubject = (subjectCredential) => {
                 data: subjectCredential
             })
             dispatch(adminAddSubjectFlag(true))
-            alert("Subject Added Successfully")
+            // alert("Subject Added Successfully")
+            toast.success("Subject Added Successfully")
         }
         catch (err) {
             dispatch({
@@ -186,7 +193,8 @@ export const adminAddAdmin = (adminCredentails) => {
                 data: adminCredentails
             })
             dispatch(adminAddAdminFlag(true))
-            alert("Admin Added Successfully")
+            // alert("Admin Added Successfully")
+            toast.success('Admin Added Successfully');
         }
         catch (err) {
             dispatch({

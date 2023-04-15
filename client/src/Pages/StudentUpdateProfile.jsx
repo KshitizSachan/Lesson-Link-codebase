@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { studentUpdate, studentLogout,newerChats, previousChats } from '../redux/action/studentAction'
 // import HomeHelper from '../Components/HomeHelper'
 import Navbar from '../Components/Navbar/Navbar'
+import { toast } from 'react-toastify';
 
 import { useHistory, withRouter } from 'react-router-dom'
 
@@ -42,7 +43,8 @@ const StudentUpdateProfile = () => {
         formData.append("email", store.student.student.student.email)
         dispatch(studentUpdate(formData, history))
         setModal(true)
-        alert("Kindly login again to see updates")
+        // alert("Kindly login again to see updates")
+        toast.success("kindly login again to see updates")
         dispatch(studentLogout())
         history.push('/')
     }

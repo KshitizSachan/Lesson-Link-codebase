@@ -1,6 +1,7 @@
 import axios from 'axios';
 import setAuthToken from '../utils/setAuthToken'
 import jwt_decode from 'jwt-decode';
+import { toast } from 'react-toastify';
 import { SET_FACULTY, SET_ERRORS, SET_FLAG, SET_ERRORS_HELPER } from '../actionTypes'
 
 const setFaculty = (data) => {
@@ -62,7 +63,8 @@ export const facultyUpdatePassword = (passwordData) => {
                 url: url + "/api/faculty/updatePassword",
                 data: passwordData
             })
-            alert("Password Updated Successfully")
+            // alert("Password Updated Successfully")
+            toast.success("Password Updated Successfully")
         }
         catch (err) {
             dispatch({
@@ -82,7 +84,8 @@ export const getOTPFaculty = (studentEmail) => {
                 url: url + '/api/faculty/forgotPassword',
                 data: studentEmail
             })
-            alert("Otp has been sent to your email")
+            // alert("Otp has been sent to your email")
+            toast.success("Otp has been sent to your email")
             dispatch({ type: SET_FLAG })
         }
         catch (err) {
@@ -103,7 +106,8 @@ export const submitOTPFaculty = (newPasswordWithOtp, history) => {
                 url: url + "/api/faculty/postOTP",
                 data: newPasswordWithOtp
             })
-            alert("Password Update, kindly login with updated password")
+            // alert("Password Update, kindly login with updated password")
+            toast.success("Password updated successfully, Kindly login with updated password")
             history.push('/')
         }
         catch (err) {
@@ -168,7 +172,8 @@ export const markAttendence = (selectedStudents, subjectCode, department, year,
                     url: url + "/api/faculty/markAttendence",
                 data: { selectedStudents, subjectCode, department, year, section}
                 })
-            alert("attendence has been marked successfully")
+            // alert("attendence has been marked successfully")
+            toast.success('Attendence has been marked successfully')
             dispatch({
                 type: "HELPER",
                 payload: true
@@ -191,7 +196,8 @@ export const uploadMarks = (subjectCode, exam, totalMarks, marks,
                     subjectCode, exam, totalMarks, marks, department, year, section,
                     }
             })
-            alert("Mark uploaded successfully")
+            // alert("Mark uploaded successfully")
+            toast.success("Mark uploaded successfully")
             dispatch({
                 type: "HELPER",
                 payload: true
