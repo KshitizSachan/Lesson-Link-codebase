@@ -5,6 +5,8 @@ import classnames from 'classnames'
 import { adminAddSubject } from '../redux/action/adminAction'
 import AdminHomeHelper from '../Components/AdminHomeHelper'
 
+import "../Style/adminAllAddPages.css"
+
 const AdminAddSubject = () => {
     const store = useSelector((store) => store)
     const dispatch = useDispatch()
@@ -50,81 +52,82 @@ const AdminAddSubject = () => {
     return (
         <div>
             {store.admin.isAuthenticated ? <> <AdminHomeHelper />
-                <div className="container mt-5">
-                    <div className="row justify-content-center">
-                        <div className="col-md-4">
-                            <div className="d-flex justify-content-md-center vh-100">
-                                <form noValidate onSubmit={formHandler}>
-                                    <div className="form-group">
-                                        <label htmlFor="snameId">Subject Name</label>
-                                        <input onChange={(e) => setSubjectName(e.target.value)} type="text" className={classnames("form-control",
-                                            {
-                                                'is-invalid': error.subjectName
-                                            })} id="snameId" />
-                                        {error.subjectName && (<div className="invalid-feedback">{error.subjectName}</div>)}
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="scodeId">Subject Code</label>
-                                        <input onChange={(e) => setSubjectCode(e.target.value)} type="text" className={classnames("form-control",
-                                            {
-                                                'is-invalid': error.subjectCode
-                                            })} id="scodeId" />
-                                        {error.subjectCode && (<div className="invalid-feedback">{error.subjectCode}</div>)}
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="totalLectures">Total Lectures</label>
-                                        <input onChange={(e) => setTotalLectures(e.target.value)} type="number" className={classnames("form-control",
-                                            {
-                                                'is-invalid': error.totalLectures
-                                            })} id="totalLectures" />
-                                        {error.totalLectures && (<div className="invalid-feedback">{error.totalLectures}</div>)}
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="departmentId">Department</label>
-                                        <select onChange={(e) => setDepartment(e.target.value)} className={classnames("form-control",
-                                            {
-                                                'is-invalid': error.department
-                                            })} id="departmentId">
-                                            <option>Select</option>
-                                            <option value="E.C.E">E.C.E</option>
-                                            <option value="D.S.A.I">D.S.A.I</option>
-                                            <option value="C.S.E">C.S.E</option>
-                                        </select>
-                                        {error.department && (<div className="invalid-feedback">{error.department}</div>)}
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="yearId">Year</label>
-                                        <select onChange={(e) => setYear(e.target.value)} className={classnames("form-control",
-                                            {
-                                                'is-invalid': error.year
-
-                                            })} id="yearId">
-                                            <option>Select</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                        </select>
-
-                                        {error.year && (<div className="invalid-feedback">{error.year}</div>)}
-                                    </div>
-                                    <div class="row justify-content-center">
-                                        <div class="col-md-1">
-                                            {
-                                                isLoading && <div class="spinner-border text-primary" role="status">
-                                                    <span class="sr-only">Loading...</span>
-                                                </div>
-                                            }
+                <div className="sarakuch" style={{height: "calc(110vh - 69px)"}}>
+                    <div className="container">
+                        <div className="row justify-content-center">
+                            <div className="col-md-4">
+                                <div className="d-flex justify-content-md-center">
+                                    <form noValidate onSubmit={formHandler} className='bgf titlestyle'>
+                                        <div className="form-group">
+                                            <label htmlFor="snameId">Subject Name</label>
+                                            <input onChange={(e) => setSubjectName(e.target.value)} type="text" className={classnames("form-control",
+                                                {
+                                                    'is-invalid': error.subjectName
+                                                })} id="snameId" />
+                                            {error.subjectName && (<div className="invalid-feedback">{error.subjectName}</div>)}
                                         </div>
-                                    </div>
-                                    {!isLoading && <button type="submit" className="btn btn-info  ">Add Subject</button>}
-                                   
-                                    
-                                </form>
+                                        <div className="form-group">
+                                            <label htmlFor="scodeId">Subject Code</label>
+                                            <input onChange={(e) => setSubjectCode(e.target.value)} type="text" className={classnames("form-control",
+                                                {
+                                                    'is-invalid': error.subjectCode
+                                                })} id="scodeId" />
+                                            {error.subjectCode && (<div className="invalid-feedback">{error.subjectCode}</div>)}
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="totalLectures">Total Lectures</label>
+                                            <input onChange={(e) => setTotalLectures(e.target.value)} type="number" className={classnames("form-control",
+                                                {
+                                                    'is-invalid': error.totalLectures
+                                                })} id="totalLectures" />
+                                            {error.totalLectures && (<div className="invalid-feedback">{error.totalLectures}</div>)}
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="departmentId">Department</label>
+                                            <select onChange={(e) => setDepartment(e.target.value)} className={classnames("form-control",
+                                                {
+                                                    'is-invalid': error.department
+                                                })} id="departmentId">
+                                                <option>Select</option>
+                                                <option value="E.C.E">E.C.E</option>
+                                                <option value="D.S.A.I">D.S.A.I</option>
+                                                <option value="C.S.E">C.S.E</option>
+                                            </select>
+                                            {error.department && (<div className="invalid-feedback">{error.department}</div>)}
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="yearId">Year</label>
+                                            <select onChange={(e) => setYear(e.target.value)} className={classnames("form-control",
+                                                {
+                                                    'is-invalid': error.year
+
+                                                })} id="yearId">
+                                                <option>Select</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+
+                                            {error.year && (<div className="invalid-feedback">{error.year}</div>)}
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-1">
+                                                {
+                                                    isLoading && <div class="spinner-border text-primary" role="status">
+                                                        <span class="sr-only">Loading...</span>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                        {!isLoading && <button type="submit" className="btn btn-info addBtn">Add Subject</button>}
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div></>: (history.push('/'))}
+                </div>
+            </> : (history.push('/'))}
         </div>
     )
 }
