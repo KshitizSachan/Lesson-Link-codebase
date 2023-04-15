@@ -72,93 +72,95 @@ const AttendenceFaculty = () => {
       {store.faculty.isAuthenticated ? (
         <>
           {/* <FacultyHomeHelper /> */}
-          <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'}  profile ="faculty" display={"none"}/>
-          
+          <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} profile="faculty" display={"none"} />
+
           {store.faculty.fetchedStudentsHelper && (
-            <div className="row justify-content-center mt-4 ">
-              <div className="col-md-4 bg_format">
-                <div className="sbtn_h3">
-                  <h3 className="markatt">Mark Attendance</h3>
-                </div>
-                <form noValidate onSubmit={formHandler}>
-                  <div className="form-group">
-                    <label htmlFor="branchId" className="datafontstyle">Department</label>
-                    <select
-                      onChange={(e) => setDepartment(e.target.value)}
-                      className={classnames("form-control", {
-                        "is-invalid": error.department,
-                      })}
-                      id="branchId"
-                    >
-                      <option>Select</option>
-                      <option value={store.faculty.faculty.faculty.department}>
-                        {store.faculty.faculty.faculty.department}
-                      </option>
-                    </select>
-                    {error.department && (
-                      <div classNameName="invalid-feedback">
-                        {error.department}
-                      </div>
-                    )}
+            <div className="sabkuch1">
+              <div className="row justify-content-center">
+                <div className="col-md-4 bg_formatm">
+                  <div className="sbtn_h3">
+                    <h3 className="markatt">Mark Attendance</h3>
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="yearId" className="datafontstyle">Year</label>
-                    <select
-                      onChange={(e) => setYear(e.target.value)}
-                      className={classnames("form-control", {
-                        "is-invalid": error.year,
-                      })}
-                      id="yearId"
-                    >
-                      <option>Select</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                    </select>
-
-                    {error.year && (
-                      <div classNameName="invalid-feedback">{error.year}</div>
-                    )}
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="sectionId" className="datafontstyle">Section</label>
-                    <select
-                      onChange={(e) => setSection(e.target.value)}
-                      className={classnames("form-control", {
-                        "is-invalid": error.section,
-                      })}
-                      id="sectionId"
-                    >
-                      <option>Select</option>
-                      <option value="A">A</option>
-                      <option value="B">B</option>
-                    </select>
-                    {error.section && (
-                      <div classNameName="invalid-feedback">
-                        {error.section}
-                      </div>
-                    )}
-                  </div>
-                  <div class="row justify-content-center">
-                    <div class="col-md-1">
-                      {isLoading && (
-                        <div class="spinner-border text-primary" role="status">
-                          <span class="sr-only">Loading...</span>
+                  <form noValidate onSubmit={formHandler}>
+                    <div className="form-group">
+                      <label htmlFor="branchId" className="datafontstyle">Department</label>
+                      <select
+                        onChange={(e) => setDepartment(e.target.value)}
+                        className={classnames("form-control", {
+                          "is-invalid": error.department,
+                        })}
+                        id="branchId"
+                      >
+                        <option>Select</option>
+                        <option value={store.faculty.faculty.faculty.department}>
+                          {store.faculty.faculty.faculty.department}
+                        </option>
+                      </select>
+                      {error.department && (
+                        <div classNameName="invalid-feedback">
+                          {error.department}
                         </div>
                       )}
                     </div>
-                  </div>
-                  {!isLoading && (
-                    <div className="sbtn">
-                      <button type="submit" className="submitBtn">
-                      Search
-                      </button>
+                    <div className="form-group">
+                      <label htmlFor="yearId" className="datafontstyle">Year</label>
+                      <select
+                        onChange={(e) => setYear(e.target.value)}
+                        className={classnames("form-control", {
+                          "is-invalid": error.year,
+                        })}
+                        id="yearId"
+                      >
+                        <option>Select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+
+                      {error.year && (
+                        <div classNameName="invalid-feedback">{error.year}</div>
+                      )}
                     </div>
-                    
-                  )}
-                </form>
+
+                    <div className="form-group">
+                      <label htmlFor="sectionId" className="datafontstyle">Section</label>
+                      <select
+                        onChange={(e) => setSection(e.target.value)}
+                        className={classnames("form-control", {
+                          "is-invalid": error.section,
+                        })}
+                        id="sectionId"
+                      >
+                        <option>Select</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                      </select>
+                      {error.section && (
+                        <div classNameName="invalid-feedback">
+                          {error.section}
+                        </div>
+                      )}
+                    </div>
+                    <div class="row justify-content-center">
+                      <div class="col-md-1">
+                        {isLoading && (
+                          <div class="spinner-border text-primary" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                    {!isLoading && (
+                      <div className="sbtn">
+                        <button type="submit" className="submitBtn">
+                          Search
+                        </button>
+                      </div>
+
+                    )}
+                  </form>
+                </div>
               </div>
             </div>
           )}
