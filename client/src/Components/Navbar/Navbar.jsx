@@ -87,11 +87,11 @@ function Navbar(props) {
                     <Link className="dropdown-item" to="/student/getAllSubjects"  style={{color:"#000"}}>Student Subject List</Link>
                   </div>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <button type="button" className="btn"><Link to="/studentDetails"><li>STUDENTS</li></Link></button>
-                </li>
+                </li> */}
                 <li className="nav-item">
-                  <button type="button" className="btn"><Link to="/studentDetails"><li>NEW CONVERSATION ({store.student.newerChats.length})</li></Link></button>
+                  <button type="button" className="btn"><Link to="/studentDetails"><li>CONVERSATION</li></Link></button>
                 </li>
               </>}
             <li onClick={logoutHandler}><a href="#"><li>LOGOUT</li></a></li>

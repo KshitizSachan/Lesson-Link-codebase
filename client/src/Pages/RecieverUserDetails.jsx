@@ -31,6 +31,7 @@ const RecieverUserDetails = (props) => {
                     img={store.student.regNumStudent.avatar}
                     name={store.student.regNumStudent.name}
                     registrationNumber={store.student.regNumStudent.registrationNumber}
+                    sendRegistrationNumber={store.student.student.student.registrationNumber}
                     department={store.student.regNumStudent.department}
                     designation={store.student.regNumStudent.section}
                     email={store.student.regNumStudent.email}

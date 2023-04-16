@@ -118,7 +118,7 @@ const FacultyDetails = (props) => {
                             </div>
                         </> :
                         <>
-                            <Link to={`/chat/${props.registrationNumber}.${props.registrationNumber}`} style={{ textDecoration: "none", color: "#fff" }}>
+                            <Link to={`/chat/${props.registrationNumber}.${props.sendRegistrationNumber}`} style={{ textDecoration: "none", color: "#fff" }}>
                                 <button className='chat-btn'>CHAT
                                 </button>
                             </Link>

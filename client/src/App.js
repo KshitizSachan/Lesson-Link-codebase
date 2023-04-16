@@ -19,7 +19,7 @@ import Home from './Pages/StudentHome'
 import StudentDetails from './Pages/StudentDetails'
 import facultyInterface from './Pages/FacultyInterface'
 import AttendenceFaculty from './Pages/AttendenceFaculty'
-
+import Page404 from './Pages/Page404';
 import AdminAddStudent from './Pages/AdminAddStudent'
 import AdminAddFaculty from './Pages/AdminAddFaculty'
 import AdminAddSubject from './Pages/AdminAddSubject'
@@ -130,6 +130,7 @@ function App() {
           <Route exact path="/forgotPassword/:user" component={ForgotPassword} />
           <Route exact path="/chat/:room" component={Chat} />
           <Route exact path="/student/:registrationNumber" component={RecieverUserDetails} />
+          <Route path="*" component={Page404} />
         </Switch>
       </Router>
     </div>

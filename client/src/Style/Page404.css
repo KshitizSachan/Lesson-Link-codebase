@@ -1,0 +1,45 @@
+
+.page-404 {
+    background-image: url('./Images/404background.jpg') ;
+    background-size: 200vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+  }
+  
+  .error-image {
+    width: 300px;
+    height: auto;
+  }
+  
+  .error-message {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    color: #f4faf7;
+  }
+  
+
+  .home-link {
+    text-decoration: none;
+  }
+  
+  .home-button {
+    width: auto;
+    background-color: #65b7b6;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .home-button:hover {
+    background-color: #0cc5c2;
+  }
