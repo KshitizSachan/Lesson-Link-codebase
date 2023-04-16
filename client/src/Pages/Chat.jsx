@@ -6,6 +6,7 @@ import io from 'socket.io-client';
 import { useHistory } from 'react-router-dom';
 import Navbar from '../Components/Navbar/Navbar';
 import '../Style/Chat.css'
+import { toast } from 'react-toastify';
 
 //Swap HelperFunction
 function swap(input, value_1, value_2) {
@@ -79,9 +80,10 @@ const Chat = (props) => {
                 receiverRegistrationNumber
             }
             dispatch(sendMessage(room1,messageObj))
+            setTimeout(() => {window.location.reload(); }, 3000); 
         }
         else {
-            alert("Can't send empty message")
+            toast.error("Can't send empty message")
         }
     }
 
