@@ -5,6 +5,8 @@ import { adminGetAllFaculty } from '../../redux/action/adminAction'
 import AdminHomeHelper from '../../Components/AdminHomeHelper'
 import classnames from 'classnames'
 
+import '../../Style/adminAllAddPages.css'
+
 const AdminGetAllFaculty = () => {
     const store = useSelector((store) => store)
     const dispatch = useDispatch()
@@ -33,9 +35,9 @@ const AdminGetAllFaculty = () => {
             {store.admin.isAuthenticated ? <>
                 <AdminHomeHelper />
                 <div className="container">
-                    <div className="row mt-5">
-                        <div className="col-md-4">
-                            <form form-inline noValidate onSubmit={formHandler}>
+                    <div className="row mt-5 mb-5">
+                        <div className="col-md-4 titlestyle">
+                            <form form-inline noValidate onSubmit={formHandler} className='bgf'>
                                 <div className="form-group">
                                     <label htmlFor="departmentId">Department</label>
                                     <select onChange={(e) => setDepartment(e.target.value)} className={classnames("form-control",
@@ -58,28 +60,28 @@ const AdminGetAllFaculty = () => {
                                         }
                                     </div>
                                 </div>
-                                {!isLoading && <button type="submit" className="btn btn-info btn-block  ">Search</button>}
+                                {!isLoading && <button type="submit" className="btn btn-info btn-block addBtn">Search</button>}
                             </form>
 
 
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 bgf">
                             
-                            {store.admin.allFaculty.length !== 0 && <table className="table border">
-                                <thead>
+                            {store.admin.allFaculty.length !== 0 && <table className="table" style={{marginBottom: "0"}}>
+                                <thead className='frameTop'>
                                     <tr>
-                                        <th scope="col">S.No</th>
+                                        <th scope="col" style={{borderRadius: "12px 0 0 12px"}}>S.No</th>
                                         <th scope="col">Registration Number</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Email</th>
-                                        <th scope="col">Joining Year</th>
+                                        <th scope="col" style={{borderRadius: "0 12px 12px 0"}}>Joining Year</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {
                                         store.admin.allFaculty.map((res, index) =>
-                                            <tr key={index}>
-                                                <th scope="row">{index + 1}</th>
+                                            <tr key={index} className='frameEntry'>
+                                                <td scope="row">{index + 1}</td>
                                                 <td>{res.registrationNumber}</td>
                                                 <td>{res.name}</td>
                                                 <td>{res.email}</td>

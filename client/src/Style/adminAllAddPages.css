@@ -33,11 +33,26 @@
     padding: 3px 30px;
     background: #007FFF;
     border: 1px solid #007FFF;
-    border-radius: 30px;
+    border-radius: 20px;
     color: #FFFFFF;
 }
 
 .addBtn:hover {
     background: #FFFFFF;
     color: #007FFF;
+}
+
+.frameTop{
+    /* height: 51px; */
+    border-top-right-radius: 20px;
+    /* top: 405px; */
+    background: #FFFFFF;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.frameEntry{
+    background: #F5F5F5;
+    border-bottom: 2px solid #FFFFFF;
+    border-radius: 8px 8px 0px 0px;
 }
