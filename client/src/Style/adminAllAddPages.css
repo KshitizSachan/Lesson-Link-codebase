@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 69px);
+    min-height: calc(97vh - 69px);
 }
 
 .bgf {
@@ -30,7 +30,7 @@
     margin-top: 10px;
     font-family: 'Roboto Serif';
     font-weight: 400;
-    padding: 3px 30px;
+    padding: 8px 30px;
     background: #007FFF;
     border: 1px solid #007FFF;
     border-radius: 30px;

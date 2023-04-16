@@ -1,0 +1,48 @@
+.chatWrapper,.student-wrapper{
+    min-height: 100vh;
+    background-image: url("../Style/Images/chatBg.svg");
+}
+.container{
+    margin-top: 2rem;
+}
+.chat-content{
+    margin-bottom: 16px;
+    display: flex;
+}
+.personName{
+    color: #294BA4;
+    font-weight: 700;
+    border: 2px solid;
+    padding: 6px 12px;
+    border-radius: 8px;
+    /* color: #fff; */
+    height: fit-content;
+}
+.chat-detail{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: end;
+}
+.personChat{
+    padding: 4px 10px;
+    margin-left: 12px;
+    background-color: #95BDFF;
+    color: #fff;
+    border-radius: 8px;
+    height: fit-content;
+    margin-bottom: 0;
+}
+.chat-time{
+    font-size: 12px;
+    color: rgb(63, 73, 127);
+    display: flex;
+    align-items: end;
+    height: fit-content;
+    justify-content: end;
+}
+.chat-date{
+    margin-bottom: 8px;
+    text-align: center;
+    color: #808080fc;
+}

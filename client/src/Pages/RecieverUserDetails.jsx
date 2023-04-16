@@ -1,8 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link, useHistory } from 'react-router-dom'
 import { getStudentByRegName } from '../redux/action/studentAction'
-import HomeHelper from '../Components/HomeHelper'
+// import HomeHelper from '../Components/HomeHelper'
+import Navbar from '../Components/Navbar/Navbar';
+import FacultyDetails from './Faculty/FacultyMainPage/FacultyDetails';
 
 const RecieverUserDetails = (props) => {
     const store = useSelector((store) => store)
@@ -10,85 +12,37 @@ const RecieverUserDetails = (props) => {
     const dispatch = useDispatch()
 
     const [registrationNumber, setRegistrationNumber] = useState("")
-  
+
 
 
     useEffect(() => {
         setRegistrationNumber(props.match.params.registrationNumber)
         dispatch(getStudentByRegName(registrationNumber))
-        
-    }, [registrationNumber]) 
 
+    }, [registrationNumber])
 
     return (
         <div>
             {store.student.isAuthenticated ? <>
-                <HomeHelper />
-                <div className="container">
-                    <div className="row mt-5">
-                        <div className="col-md-2">
-
-                        </div>
-                        <div className="col-md-8">
-                            <div className="row">
-                                <div className="col-md-5">
-                                    <div className="card" style={{ width: "18rem" }}>
-                                        <img className="card-img-top" src={store.student.regNumStudent.avatar} alt="Card image cap" />
-                                        <div className="card-body">
-                                            <h5 className="card-title">{store.student.regNumStudent.name}</h5>
-                                            <h5 className="card-title">{}</h5>
-                                            <Link to={`/chat/${store.student.regNumStudent.registrationNumber}.${store.student.student.student.registrationNumber}`}>CHAT</Link>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-md-7">
-                                    <table className="table border">
-                                        <tbody>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td>{store.student.regNumStudent.name}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Email</td>
-                                                <td>{store.student.regNumStudent.email}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Registration Number</td>
-                                                <td>{store.student.regNumStudent.registrationNumber}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Year</td>
-                                                <td>{store.student.regNumStudent.year}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Department</td>
-                                                <td>{store.student.regNumStudent.department}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Section</td>
-                                                <td>{store.student.regNumStudent.section}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Batch</td>
-                                                <td>{store.student.regNumStudent.batch}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-2">
-
-                        </div>
-
-                    </div>
+                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} profile="student" display={"none"} />
+                {/* container */}
+                <div className="student-receiver" style={{display:"flex",justifyContent: "center", alignItems: "start",marginTop: "6rem"}}>
+                <FacultyDetails
+                    img={store.student.regNumStudent.avatar}
+                    name={store.student.regNumStudent.name}
+                    registrationNumber={store.student.regNumStudent.registrationNumber}
+                    department={store.student.regNumStudent.department}
+                    designation={store.student.regNumStudent.section}
+                    email={store.student.regNumStudent.email}
+                    joiningYear={store.student.regNumStudent.batch}
+                    gender={store.student.regNumStudent.gender}
+                    year={store.student.regNumStudent.year}
+                    facultyMobileNumber={store.student.regNumStudent.studentMobileNumber}
+                    profile="student"
+                    display={"none"}
+                    type="Receiver"
+                />
                 </div>
-
-
-
-
-
             </> : (history.push('/'))}
         </div>
 

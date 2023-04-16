@@ -62,13 +62,13 @@ const StudentDetails = () => {
     }
   
     return (
-        <div>
+        <div className='student-wrapper'>
             {store.student.isAuthenticated ? <>
                 <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'}  display={"none"} profile="student"/>
-                <div className="container">
+                <div className="container" style={{height: "fit-content", width:"auto", backgroundColor: "white",marginTop:"6rem"}}>
                     {result.length === 0 && <div className="row">
-                        <div className="col-md-3 border mt-4">
-                            <div className="row mt-3">
+                        <div className="col-md-3 border">
+                            {/* <div className="row mt-3">
                                 <div className="col mb-2">
                                     <form className="form-inline" onSubmit={formHandler}>
                                         <div className="form-group ">
@@ -77,8 +77,8 @@ const StudentDetails = () => {
                                         <button type="submit" className="btn btn-block btn-info mt-1 ">Search</button>
                                     </form>
                                 </div>
-                            </div>
-                            <div className="row justify-content-center mt-4 mb-4 ">
+                            </div> */}
+                            <div className="row justify-content-center mb-4 ">
                                 <div className="col">
                                     <form noValidate onSubmit={formHandler}>
                                         <div className="form-group">
@@ -114,12 +114,12 @@ const StudentDetails = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-9 border mt-4">
+                        <div className="col-md-9 border">
                             <div className="row justify-content-center ">
                                 <div className="col">
                                     <div className="row">
                                         <div className="col-md-6 border">
-                                            <h4 className="text-center">New Chats</h4>
+                                            <h4 className="text-center mt-2">New Chats</h4>
                                             <table className="table">
                                                 <tbody>
                                                     {
@@ -135,7 +135,7 @@ const StudentDetails = () => {
                                             </table>
                                         </div>
                                         <div className="col-md-6 border">
-                                            <h4 className="text-center">Older Chats</h4>
+                                            <h4 className="text-center mt-2">Older Chats</h4>
                                             <table className="table">
                                                 <tbody>
                                                     {

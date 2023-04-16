@@ -52,7 +52,7 @@ const AdminAddSubject = () => {
     return (
         <div>
             {store.admin.isAuthenticated ? <> <AdminHomeHelper />
-                <div className="sarakuch" style={{height: "calc(110vh - 69px)"}}>
+                <div className="sarakuch" >
                     <div className="container">
                         <div className="row justify-content-center">
                             <div className="col-md-4">
