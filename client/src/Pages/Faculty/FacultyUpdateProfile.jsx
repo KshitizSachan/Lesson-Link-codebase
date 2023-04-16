@@ -8,6 +8,7 @@ import { facultyUpdate, facultyLogout} from '../../redux/action/facultyAction'
 // import FacultyHomeHelper from '../../Components/FacultyHomeHelper'
 import Navbar from '../../Components/Navbar/Navbar';
 
+import "../../Style/adminAllAddPages.css"
 
 const FacultyUpdateProfile = () => {
     const store = useSelector((store) => store)
@@ -54,8 +55,8 @@ const FacultyUpdateProfile = () => {
                 <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} profile ="faculty" display={"none"} />
                 <div className="container mt-5">
                     <div className="row ">
-                        <div className="col-md-5 w-100 m-auto">
-                            <form onSubmit={formHandler} className=' d-flex flex-column justify-content-center'>
+                        <div className="col-md-5 w-100 m-auto titlestyle">
+                            <form onSubmit={formHandler} className=' d-flex flex-column justify-content-center bgf'>
                                 <div className="form-group">
                                     <label htmlFor="inputId">Profile Picture</label>
                                     <input required className="form-control" type="file" accept=".jpg,.png,.jpeg" id="inputId" onChange={imagehandler} style={{height:"auto"}} ></input>
@@ -82,7 +83,7 @@ const FacultyUpdateProfile = () => {
                                         }
                                     </div>
                                 </div>
-                                {!isLoading && <button type="submit" className="btn btn-info"  style={{backgroundColor:"#092E43"}}>Update</button>}
+                                {!isLoading && <button type="submit" className="btn btn-info addBtn">Update</button>}
                             </form>
                         </div>
                     </div>
