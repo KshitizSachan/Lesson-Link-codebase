@@ -6,8 +6,7 @@ import classnames from 'classnames'
 import Navbar from '../Components/Navbar/Navbar';
 import { studentUpdatePassword } from '../redux/action/studentAction'
 
-
-
+import "../Style/adminAllAddPages.css"
 
 const StudentUpdatePassword = () => {
     const store = useSelector((store) => store)
@@ -34,8 +33,8 @@ const StudentUpdatePassword = () => {
                 <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'}  display={"none"} profile="student"/>
                 <div className="container m-5">
                     <div className="row m-5">
-                        <div className="col-md-5 m-auto">
-                            <form noValidate onSubmit={formHandler}>
+                        <div className="col-md-5 m-auto titlestyle">
+                            <form noValidate onSubmit={formHandler} className='bgf'>
                                 <div className="form-group">
                                     <label htmlFor="emailId">Old Password</label>
                                     <input onChange={(e) => setOldPassword(e.target.value)} type="password" value={oldPassword} className={classnames("form-control",
@@ -59,7 +58,7 @@ const StudentUpdatePassword = () => {
                                     })} value={confirmNewPassword} type="password" id="passwordCId" />
                                     {error.confirmNewPassword && (<div className="invalid-feedback">{error.confirmNewPassword}</div>)}
                                 </div>
-                                <button type="submit" class="btn btn-info btn-block ">Update Password</button>
+                                <button type="submit" class="btn btn-info btn-block addBtn">Update Password</button>
                             </form>
                         </div>
                     </div>
