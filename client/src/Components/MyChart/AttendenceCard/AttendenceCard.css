@@ -1,0 +1,59 @@
+.AttendenceCards{
+    display: flex;
+    margin-top: 3rem;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+.att-card-wrapper{
+    margin-right: 3rem;
+    width: 260px;
+    height: 336px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 16px;
+}
+.att-card{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.att-chart{
+    width: 100%;
+    height: 50%;
+}
+.att-details{
+    margin-top: 12px;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 96%;
+    padding: 6px 16px;
+}
+.att-subject-details,.att-hours-details{
+    display: flex;
+    /* padding: 10px; */
+    justify-content: center;
+    width: 100%;
+}
+.att-details-left, .att-deatils-right{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.att-details-left-tilte{
+    font-size: 10px;
+    color: grey;
+}
+.subject-code, .subject-name{
+    color: #F5B91F;
+}
+.att-hours{
+    color: green;
+}

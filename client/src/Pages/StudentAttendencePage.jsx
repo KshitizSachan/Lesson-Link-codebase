@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {fetchAttendence} from '../redux/action/studentAction'
+import { fetchAttendence } from '../redux/action/studentAction'
 
 // import HomeHelper from '../Components/HomeHelper'
 import { useHistory } from 'react-router-dom';
 import Navbar from '../Components/Navbar/Navbar';
+import Arrow from '../Style/Images/Arrow.svg'
+import AttendenceCard from '../Components/MyChart/AttendenceCard/AttendenceCard';
 
 const Home = () => {
     const store = useSelector(store => store)
@@ -13,14 +15,44 @@ const Home = () => {
 
 
     useEffect(() => {
-      dispatch(fetchAttendence())  
-    },[])
+        dispatch(fetchAttendence())
+    }, [])
 
     return (
-        <div>
-            {store.student.isAuthenticated ? <>
-                <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'}  display={"none"} profile="student"/>
-                <div className="container">
+        <>
+            <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} display={"none"} profile="student" />
+            <div className="attendence-wrapper" style={{ width: "100%", minHeight: "82vh", padding: "0rem 3rem" }}>
+                {store.student.isAuthenticated ? <>
+                    <div className="fac-classes" style={{ margin: "0", marginTop: "3rem" }}>
+                        <p><span style={{ marginRight: "1rem" }}><img src={Arrow} /></span>Attendence</p>
+                    </div>
+                    <div className='AttendenceCards'>
+                        {
+                            store.student.attendence.map((res, index) =>
+                                <div key={index}>
+                                    <AttendenceCard
+                                        maxHours={res.maxHours}
+                                        presentHours={res.totalLecturesByFaculty}
+                                        absentHours={res.lectureAttended}
+                                        subjectCode={res.subjectCode}
+                                        subjectName={res.subjectName}
+                                    // attendPer={res.attendence}
+                                    />
+                                </div>
+                            )
+                        }
+
+                    </div>
+                </> : (history.push('/'))
+                }
+            </div>
+        </>
+
+    )
+}
+
+export default Home;
+{/* <div className="container">
                     <div className="row mt-5">
                         <div className="col-md-6 m-auto">
                             <table className="table border">
@@ -55,13 +87,4 @@ const Home = () => {
                             </table>
                         </div>
                     </div>
-                </div>
-            </> : (history.push('/'))}
-           
-            
-        </div>
-
-    )
-}
-
-export default Home
+                </div> */}
