@@ -13,7 +13,6 @@ const Home = () => {
     const history = useHistory()
     const dispatch = useDispatch()
 
-
     useEffect(() => {
         dispatch(fetchAttendence())
     }, [])
@@ -23,7 +22,7 @@ const Home = () => {
             <Navbar bgcolor={'linear-gradient(to bottom right, #001339, #0F3277)'} display={"none"} profile="student" />
             <div className="attendence-wrapper" style={{ width: "100%", minHeight: "82vh", padding: "0rem 3rem" }}>
                 {store.student.isAuthenticated ? <>
-                    <div className="fac-classes" style={{ margin: "0", marginTop: "3rem" }}>
+                    <div className="fac-classes" style={{ margin: "0", marginTop: "3rem",backgroundColor:"#0167ce" }}>
                         <p><span style={{ marginRight: "1rem" }}><img src={Arrow} /></span>Attendence</p>
                     </div>
                     <div className='AttendenceCards'>
@@ -31,6 +30,7 @@ const Home = () => {
                             store.student.attendence.map((res, index) =>
                                 <div key={index}>
                                     <AttendenceCard
+                                        type = "attendence"
                                         maxHours={res.maxHours}
                                         presentHours={res.totalLecturesByFaculty}
                                         absentHours={res.lectureAttended}

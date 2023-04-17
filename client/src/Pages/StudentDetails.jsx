@@ -158,7 +158,8 @@ const StudentDetails = () => {
                     </div>}
 
                     {result.length !== 0 && <div className="row">
-                        <div className="col-md-6 m-auto">
+                    {/* className="col-md-6 m-auto" */}
+                        <div className='w-100'>
                             <table className="table">
                                 <thead>
                                     <tr>
