@@ -1,14 +1,14 @@
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
 
-const MyCharts = ({ maxHours, presentHours, absentHours}) => {
+const MyCharts = ({obtainedMarks,totalMarks}) => {
   const data = {
-    labels: ['Present Hours', 'Absent Hours'],
+    labels: ['Obtained Marks',"Lost Marks" ],
     datasets: [
       {
-        data: [presentHours, absentHours],
-        backgroundColor: ['#880ED4', '#FF6384'],
-        hoverBackgroundColor: ['#880ED4', '#FF6384'],
+        data: [obtainedMarks,(totalMarks - obtainedMarks)],
+        backgroundColor: ['#32CD32', '#000'],
+        hoverBackgroundColor: ['#32CD32', '#000'],
       },
     ],
   };
@@ -18,7 +18,7 @@ const MyCharts = ({ maxHours, presentHours, absentHours}) => {
     maintainAspectRatio: false,
     title: {
       display: true,
-      text: `Max Hours: ${maxHours}`,
+      text: `Total Marks: ${totalMarks}`,
       fontSize: 14,
     },
     legend: {

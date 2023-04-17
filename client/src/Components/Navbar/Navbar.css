@@ -1,3 +1,15 @@
+.adminNavStyle {
+  color: #fff;
+  text-decoration: none;
+}
+.adminNavStyle:hover{
+  color: #007FFF;
+  text-decoration: none;
+}
+.btn{
+  color: #fff;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
