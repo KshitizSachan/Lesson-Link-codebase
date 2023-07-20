@@ -8,9 +8,9 @@ Login details:
 Faculty Login
 FAC202301004
 
-Student Login
-STU202301003
-STU202301004
+Student Login: 
+STU202301003,
+STU202301004,
 STU202301005
 
 Password for all
