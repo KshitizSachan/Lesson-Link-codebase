@@ -1,7 +1,7 @@
 # Lesson-Link-codebase
 Fullstack Learning management system 
 
-Live hosted link: https://64b8ef19900f0660932c3c7d--charming-mochi-19e453.netlify.app/ 
+Live hosted link: https://lessonlink.netlify.app/
 
 Login details:
 
