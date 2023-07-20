@@ -23,8 +23,8 @@ Nodejs, Reactjs, Express, MongoDB
 HTML, CSS, Tailwind, Socket.io
 
 Team: 
-Kshitiz Sachan(Lead)
-Vishal Kumar
+Kshitiz Sachan(Lead), 
+Vishal Kumar, 
 Sarthak Jain
 
 ![Screenshot (411)](https://github.com/KshitizSachan/Lesson-Link-codebase/assets/97247354/3a1df6d0-1ee1-42f8-b6f9-11595c3b8055)
