@@ -6,7 +6,7 @@ Live hosted link: https://lessonlink.netlify.app/
 Login details:
 
 Faculty Login
-FAC202301004
+Admin Login
 
 Student Login: 
 STU202301003,
